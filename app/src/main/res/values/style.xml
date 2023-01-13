@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextAppearance.LargeTitle" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">34sp</item>
+        <item name="lineHeight">@dimen/large_title_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Title1" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="lineHeight">@dimen/title_1_line_height</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Title2" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">@dimen/title_2_line_height</item>
+        <item name="android:lineSpacingExtra">2sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle1" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">@dimen/subtitle_1_line_height</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle2" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">@dimen/subtitle_2_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle2.OpenSans" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_semibold</item>
+        <item name="android:fontFamily">@font/opensans_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">@dimen/subtitle_2_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Subtitle3" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">@dimen/subtitle_3_line_height</item>
+    </style>
+
+    <style name="TextAppearance.Tag" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">@dimen/tag_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+    </style>
+
+    <style name="TextAppearance.Menu" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">@dimen/menu_line_height</item>
+        <item name="android:lineSpacingExtra">-2sp</item>
+        <item name="android:letterSpacing">0.01</item>
+    </style>
+
+    <style name="TextAppearance.Title" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">20sp</item>
+        <item name="lineHeight">@dimen/title_line_height</item>
+        <item name="android:letterSpacing">-0.02</item>
+    </style>
+
+    <style name="TextAppearance.Body" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="lineHeight">@dimen/body_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Body2" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">@dimen/body_2_line_height</item>
+        <item name="android:lineSpacingExtra">3sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Body3" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="android:fontFamily">@font/poppins_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">@dimen/body_2_line_height</item>
+    </style>
+
+    <style name="TextAppearance.Button" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_bold</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="lineHeight">@dimen/button_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Footnote" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">13sp</item>
+        <item name="lineHeight">@dimen/footnote_line_height</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Caption1" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="lineHeight">@dimen/caption_1_line_height</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Caption2" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">11sp</item>
+        <item name="lineHeight">@dimen/caption_2_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <style name="TextAppearance.Overline" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">@dimen/overline_line_height</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+
+    <style name="TextAppearance.Small" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_bold</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        <item name="android:textSize">10sp</item>
+        <item name="lineHeight">@dimen/small_line_height</item>
+        <item name="android:lineSpacingExtra">-1sp</item>
+        <item name="android:letterSpacing">-0.04</item>
+    </style>
+</resources>

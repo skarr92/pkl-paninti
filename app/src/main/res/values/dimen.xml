@@ -1,0 +1,90 @@
+<resources>
+    <dimen name="zero_dp">0dp</dimen>
+
+    <!-- Image options-->
+    <dimen name="image_options_circle_radius">200dp</dimen>
+    <dimen name="image_options_round_radius">4dp</dimen>
+
+    <!-- Radius -->
+    <dimen name="extra_small_radius">2dp</dimen>
+    <dimen name="small_radius">4dp</dimen>
+    <dimen name="normal_radius">6dp</dimen>
+    <dimen name="medium_radius">8dp</dimen>
+    <dimen name="large_radius">12dp</dimen>
+
+    <!-- Margin and Padding -->
+    <dimen name="extra_small_margin">2dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="normal_margin">8dp</dimen>
+    <dimen name="medium_margin">12dp</dimen>
+    <dimen name="screen_margin">16dp</dimen>
+    <dimen name="large_margin">24dp</dimen>
+    <dimen name="semi_huge_margin">32dp</dimen>
+    <dimen name="huge_margin">48dp</dimen>
+    <dimen name="extra_huge_margin">64dp</dimen>
+    <dimen name="custom_margin_10dp">10dp</dimen>
+    <dimen name="custom_margin_20dp">20dp</dimen>
+    <dimen name="grid_half_margin">6dp</dimen>
+    <dimen name="button_padding_vertical">10dp</dimen>
+    <dimen name="checkbox_margin">7dp</dimen>
+
+    <!-- Height and Width -->
+    <dimen name="view_height">1dp</dimen>
+    <dimen name="view_large_height">2dp</dimen>
+    <dimen name="toolbar_height">52dp</dimen>
+    <dimen name="icon_height">28dp</dimen>
+    <dimen name="linear_progress_height">12dp</dimen>
+    <dimen name="option_button_height">12dp</dimen>
+    <dimen name="option_button_icon_height">24dp</dimen>
+    <dimen name="option_button_stroke_height">1dp</dimen>
+    <dimen name="avatar_height">32dp</dimen>
+    <dimen name="outlined_icon_button_height">48dp</dimen>
+    <dimen name="rating_bar_height">18dp</dimen>
+    <dimen name="icon_product_category_height">36dp</dimen>
+    <dimen name="text_product_category_width">88dp</dimen>
+    <dimen name="text_product_category_height">32dp</dimen>
+    <dimen name="add_to_registry_height">32dp</dimen>
+    <dimen name="image_review_card_height">64dp</dimen>
+    <dimen name="image_product_select_variant">48dp</dimen>
+    <dimen name="color_product_select_variant">40dp</dimen>
+    <dimen name="active_color_product_select_variant">3dp</dimen>
+    <dimen name="avatar_user_article_height">20dp</dimen>
+    <dimen name="chip_icon_size">20dp</dimen>
+    <dimen name="checkbox_height">18dp</dimen>
+    <dimen name="clear_search_height">35dp</dimen>
+    <dimen name="image_buyer_review_card_height">48dp</dimen>
+    <dimen name="icon_badge_user_height">12dp</dimen>
+    <dimen name="variant_vertical_divider_height">14dp</dimen>
+    <dimen name="icon_bookmark_height">32dp</dimen>
+    <dimen name="image_brand_height">48dp</dimen>
+    <dimen name="chip_brand_icon_size">20dp</dimen>
+    <dimen name="progress_indicator_thickness">8dp</dimen>
+    <dimen name="avatar_stack_space">22dp</dimen>
+    <dimen name="close_icon_size">26dp</dimen>
+    <dimen name="button_height">40dp</dimen>
+
+    <!-- Elevation -->
+    <dimen name="toolbar_elevation">8dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+
+    <!-- Text appearance line height -->
+    <dimen name="large_title_line_height">52sp</dimen>
+    <dimen name="title_1_line_height">36sp</dimen>
+    <dimen name="title_2_line_height">32sp</dimen>
+    <dimen name="subtitle_1_line_height">24sp</dimen>
+    <dimen name="subtitle_2_line_height">22sp</dimen>
+    <dimen name="subtitle_2_without_padding_line_height">20sp</dimen>
+    <dimen name="subtitle_3_line_height">18sp</dimen>
+    <dimen name="subtitle_3_without_padding_line_height">16sp</dimen>
+    <dimen name="tag_line_height">15sp</dimen>
+    <dimen name="menu_line_height">22sp</dimen>
+    <dimen name="title_line_height">27sp</dimen>
+    <dimen name="body_line_height">22sp</dimen>
+    <dimen name="body_2_line_height">22sp</dimen>
+    <dimen name="button_line_height">20sp</dimen>
+    <dimen name="footnote_line_height">18sp</dimen>
+    <dimen name="caption_1_line_height">16sp</dimen>
+    <dimen name="caption_2_line_height">16sp</dimen>
+    <dimen name="overline_line_height">14sp</dimen>
+    <dimen name="small_line_height">13sp</dimen>
+</resources>
