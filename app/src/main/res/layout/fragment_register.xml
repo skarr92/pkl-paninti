@@ -26,112 +26,112 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilFullName"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
-                android:hint="@string/nama"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:hint="@string/full_name"
+                android:textColorHint="@color/gray_500"
+                app:boxStrokeColor="@color/blue_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/wave">
+                app:layout_constraintTop_toBottomOf="@+id/wave"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etFullName"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilUsername"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:hint="@string/username"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:textColorHint="@color/label_secondary"
+                app:boxStrokeColor="@color/blue_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilFullName">
+                app:layout_constraintTop_toBottomOf="@+id/tilFullName"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etUsername"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilEmail"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:hint="@string/email"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:textColorHint="@color/label_secondary"
+                app:boxStrokeColor="@color/blue_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilUsername">
+                app:layout_constraintTop_toBottomOf="@+id/tilUsername"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilPassword"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_margin"
                 android:hint="@string/password"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:textColorHint="@color/label_secondary"
+                app:boxStrokeColor="@color/blue_500"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/gray"
+                app:endIconTint="@color/gray_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilEmail">
+                app:layout_constraintTop_toBottomOf="@+id/tilEmail"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilConfirmPassword"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:hint="@string/konfirmasi_password"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:hint="@string/confirm_password"
+                android:textColorHint="@color/label_secondary"
+                app:boxStrokeColor="@color/blue_500"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/gray"
+                app:endIconTint="@color/gray_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilPassword">
+                app:layout_constraintTop_toBottomOf="@+id/tilPassword"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etConfirmPassword"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textview.MaterialTextView
@@ -140,9 +140,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_margin"
-                android:text="@string/jenis_kelamin"
-                android:textAppearance="@style/TextAppearance.Body"
-                android:textColor="@color/black"
+                android:text="@string/gender"
+                android:textAppearance="@style/TextAppearance.Body2"
+                android:textColor="@color/black_primary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tilConfirmPassword" />
@@ -161,23 +161,22 @@
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/rbMale"
-                    android:textAppearance="@style/TextAppearance.Body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:checked="true"
-                    android:text="@string/laki_laki"
-                    android:textColor="@color/gray" />
+                    android:text="@string/male"
+                    android:textColor="@color/label_secondary"
+                    android:textAppearance="@style/TextAppearance.Body2"/>
 
                 <com.google.android.material.radiobutton.MaterialRadioButton
                     android:id="@+id/rbFemale"
-                    android:textAppearance="@style/TextAppearance.Body"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/perempuan"
-                    android:textColor="@color/gray"
-                    app:layout_constraintStart_toEndOf="@+id/rbLaki" />
+                    android:text="@string/female"
+                    android:textColor="@color/label_secondary"
+                    android:textAppearance="@style/TextAppearance.Body2"/>
             </RadioGroup>
 
             <com.google.android.material.button.MaterialButton
@@ -188,18 +187,18 @@
                 android:padding="@dimen/medium_margin"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:text="@string/daftar"
+                android:text="@string/sign_up"
                 android:layout_marginHorizontal="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_margin"
+                android:layout_marginTop="@dimen/normal_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rgGender" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
+                android:layout_height="@dimen/view_height"
                 android:visibility="visible"
-                android:background="@color/gray"
+                android:background="@color/label_tertiary"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginVertical="@dimen/large_margin"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -212,10 +211,10 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/screen_margin"
                 android:textAppearance="@style/TextAppearance.Caption1"
-                android:textColor="@color/gray"
+                android:textColor="@color/gray_500"
                 android:background="@color/white"
                 android:paddingHorizontal="@dimen/small_margin"
-                android:text="@string/atau"
+                android:text="@string/or"
                 android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -225,16 +224,16 @@
                 android:id="@+id/btnGoogle"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
                 android:textAllCaps="false"
-                android:textColor="@color/gray"
+                android:textColor="@color/gray_500"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/screen_margin"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/gray"
+                app:strokeWidth="@dimen/view_height"
+                app:strokeColor="@color/gray_500"
                 app:icon="@drawable/ic_google"
                 app:iconTintMode="multiply"
                 android:layout_margin="@dimen/screen_margin"
-                android:text="@string/lanjutkan_google"
+                android:text="@string/google"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/or" />
@@ -244,9 +243,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="@style/TextAppearance.Body2"
-                android:textColor="@color/gray"
+                android:textColor="@color/label_secondary"
                 android:layout_marginVertical="@dimen/medium_margin"
-                android:text="@string/sudah_punya_akun"
+                android:text="@string/already_have_account"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

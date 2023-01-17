@@ -202,7 +202,6 @@ class FragmentRegister : Fragment() {
         } else {
             true
         }
-
         return isNullFullName
     }
 
@@ -213,7 +212,6 @@ class FragmentRegister : Fragment() {
         } else {
             true
         }
-
         return isNullUsername
     }
 
@@ -224,7 +222,6 @@ class FragmentRegister : Fragment() {
         } else {
             true
         }
-
         return isNullEmail
     }
 
@@ -235,7 +232,6 @@ class FragmentRegister : Fragment() {
         } else {
             true
         }
-
         return isNullPassword
     }
 
@@ -246,7 +242,6 @@ class FragmentRegister : Fragment() {
         } else {
             true
         }
-
         return isNullConfirmPassword
     }
 
@@ -282,7 +277,7 @@ class FragmentRegister : Fragment() {
     }
 
     private fun regexMinFullname(){
-        binding.tilFullName.error = "Nama lengkap minimal berisi 2 karakter"
+        binding.tilFullName.error = "Nama lengkap minimal 2 karakter"
         binding.etFullName.setBackgroundResource(R.drawable.bg_textbox_red)
         validName = false
     }

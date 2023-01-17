@@ -37,65 +37,67 @@
                 android:id="@+id/tvWelcome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Subtitle1"
+                android:layout_margin="@dimen/screen_margin"
                 android:text="@string/welcome"
+                android:textColor="@color/label_primary"
                 android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Subtitle1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/welcome" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilEmailOrUsername"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/screen_margin"
                 android:hint="@string/email_username"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:textColorHint="@color/label_secondary"
+                app:boxStrokeColor="@color/blue_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvWelcome">
+                app:layout_constraintTop_toBottomOf="@+id/tvWelcome"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmailOrUsername"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"/>
+                    android:inputType="text"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/tilPassword"
-                style="@style/Widget.Paninti.TextInputLayout.FilledBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/screen_margin"
                 android:hint="@string/password"
-                android:textColorHint="@color/gray"
-                app:boxStrokeColor="@color/blue"
+                android:textColorHint="@color/label_secondary"
+                app:boxStrokeColor="@color/blue_500"
                 app:endIconMode="password_toggle"
-                app:endIconTint="@color/gray"
+                app:endIconTint="@color/gray_500"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tilEmailOrUsername">
+                app:layout_constraintTop_toBottomOf="@+id/tilEmailOrUsername"
+                style="@style/Widget.Paninti.TextInputLayout.FilledBox">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etPassword"
-                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword"
+                    style="@style/Widget.Paninti.TextInputEditText.FilledBox"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
                 android:id="@+id/tvForgotPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lupa_password"
-                style="@style/TextAppearance.Caption1"
-                android:textColor="@color/gray"
+                android:text="@string/forgot_password"
+                android:textAppearance="@style/TextAppearance.Caption1"
+                android:textColor="@color/gray_500"
                 android:textAlignment="textEnd"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginTop="@dimen/medium_margin"
@@ -107,24 +109,24 @@
                 android:id="@+id/btnLogIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/medium_margin"
                 android:textAppearance="@style/TextAppearance.Button"
-                android:text="@string/masuk"
+                android:text="@string/log_in"
                 android:textColor="@color/white"
                 android:textAllCaps="false"
                 android:padding="@dimen/medium_margin"
-                android:layout_marginHorizontal="@dimen/screen_margin"
-                android:layout_marginTop="@dimen/medium_margin"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:visibility="visible"
-                android:background="@color/gray"
+                android:layout_height="@dimen/view_height"
                 android:layout_marginHorizontal="@dimen/screen_margin"
                 android:layout_marginVertical="@dimen/large_margin"
+                android:visibility="visible"
+                android:background="@color/label_tertiary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnLogIn"/>
@@ -136,9 +138,9 @@
                 android:layout_margin="@dimen/screen_margin"
                 android:background="@color/white"
                 android:paddingHorizontal="@dimen/small_margin"
-                android:text="@string/atau"
+                android:text="@string/or"
                 android:textAlignment="center"
-                android:textColor="@color/gray"
+                android:textColor="@color/gray_500"
                 android:textAppearance="@style/TextAppearance.Caption1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -151,13 +153,13 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/screen_margin"
                 android:padding="@dimen/screen_margin"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/gray"
+                android:text="@string/google"
+                android:textColor="@color/gray_500"
+                android:textAllCaps="false"
+                app:strokeWidth="@dimen/view_height"
+                app:strokeColor="@color/gray_500"
                 app:icon="@drawable/ic_google"
                 app:iconTintMode="multiply"
-                android:textAllCaps="false"
-                android:textColor="@color/gray"
-                android:text="@string/lanjutkan_google"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/or" />
@@ -168,8 +170,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="@dimen/medium_margin"
                 android:textAppearance="@style/TextAppearance.Body2"
-                android:text="@string/belum_punya_akun"
-                android:textColor="@color/gray"
+                android:text="@string/dont_have_account_yet"
+                android:textColor="@color/label_secondary"
                 android:textAlignment="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
