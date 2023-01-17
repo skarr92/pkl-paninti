@@ -13,12 +13,21 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.google.android.material.textfield.TextInputLayout
 import com.sekar.paninti.databinding.FragmentLoginBinding
 
 class FragmentLogin : Fragment() {
 
+    private var isNullEmailOrUsername = false
+    private var isNullPassword = false
+
+    var validEmailOrUsername = false
+    var validPassword = false
+
     private lateinit var binding: FragmentLoginBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -26,7 +35,16 @@ class FragmentLogin : Fragment() {
         binding = FragmentLoginBinding.inflate(layoutInflater)
         val view = binding.root
 
-        val spannable = SpannableStringBuilder(binding.tvDaftar.text.toString())
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        view()
+    }
+
+    private fun view(){
+        val spannable = SpannableStringBuilder(binding.tvSignUp.text.toString())
         val blueColor = ForegroundColorSpan(Color.parseColor("#4496B3"))
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
@@ -37,52 +55,109 @@ class FragmentLogin : Fragment() {
         }
         spannable.setSpan(blueColor, 18, 33, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannable.setSpan(clickableSpan, 18, 33, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
-        binding.tvDaftar.text = spannable
-        binding.tvDaftar.movementMethod = LinkMovementMethod.getInstance()
+        binding.tvSignUp.text = spannable
+        binding.tvSignUp.movementMethod = LinkMovementMethod.getInstance()
 
-        binding.etEmail.addTextChangedListener(object : TextWatcher {
+        emailOrUsername()
+        password()
+        logIn()
+    }
+
+    private fun emailOrUsername(){
+        binding.etEmailOrUsername.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
             override fun afterTextChanged(s: Editable?) {
                 if (s?.length ?: 0 >= 1) {
-                    binding.tilEmail.isErrorEnabled = false
+                    clearEmailOrUsername()
                 } else {
-                    binding.tilEmail.error = "Email atau Username wajib diisi"
+                    nullEmailOrUsername()
                 }
             }
         })
+    }
 
+    private fun password(){
         binding.etPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
-
             override fun afterTextChanged(s: Editable?) {
                 if (s?.length ?: 0 >= 1) {
-                    binding.tilPassword.isErrorEnabled = false
+                    clearPassword()
                 } else {
-                    binding.tilPassword.error = "Password wajib diisi"
+                    nullPassword()
                 }
 
             }
         })
+    }
 
-        binding.btnMasuk.setOnClickListener{
-            if(binding.etEmail.text.toString() == ""){
-                binding.tilEmail.error = "Email atau Username wajib diisi"
-            }
-            if(binding.etPassword.text.toString() == ""){
-                binding.tilPassword.error = "Pasword wajib diisi"
-            }
-            if (binding.tilEmail.isErrorEnabled == false && binding.tilPassword.isErrorEnabled == false){
-                val intent = Intent (getActivity(), MainActivity::class.java)
-                getActivity()?.startActivity(intent)
-            } else {
-
-            }
+    private fun logIn(){
+        binding.btnLogIn.setOnClickListener{
+            validation()
         }
-        return view
+    }
+
+    private fun validation(){
+        nullCheck()
+        validationTrue()
+    }
+
+    private fun validationTrue(){
+        if(isNullEmailOrUsername() && isNullPassword() && validEmailOrUsername==true && validPassword==true) binding()
+    }
+
+    private fun binding(){
+        val intent = Intent(activity, MainActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun nullCheck(){
+        isNullEmailOrUsername()
+        isNullPassword()
+    }
+
+    private fun isNullEmailOrUsername(): Boolean{
+        isNullEmailOrUsername = if (binding.etEmailOrUsername.length() == 0){
+            nullEmailOrUsername()
+            false
+        } else {
+            true
+        }
+        return isNullEmailOrUsername
+    }
+
+    private fun isNullPassword(): Boolean{
+        isNullPassword = if (binding.etPassword.length() == 0){
+            nullPassword()
+            false
+        } else {
+            true
+        }
+        return isNullPassword
+    }
+
+    private fun nullEmailOrUsername(): Boolean {
+        binding.tilEmailOrUsername.error = "Email atau Username wajib diisi"
+        binding.etEmailOrUsername.setBackgroundResource(R.drawable.bg_textbox_red)
+        return false
+    }
+
+    private fun nullPassword(): Boolean{
+        binding.tilPassword.error = "Password wajib diisi"
+        binding.etPassword.setBackgroundResource(R.drawable.bg_textbox_red)
+        return false
+    }
+
+    private fun clearEmailOrUsername(){
+        binding.tilEmailOrUsername.isErrorEnabled = false
+        binding.etEmailOrUsername.setBackgroundResource(R.drawable.slr_textbox)
+        validEmailOrUsername = true
+    }
+
+    private fun clearPassword(){
+        binding.tilPassword.isErrorEnabled = false
+        binding.etPassword.setBackgroundResource(R.drawable.slr_textbox)
+        validPassword = true
     }
 }
