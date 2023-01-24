@@ -20,4 +20,8 @@
     <color name="alert_success">#00C851</color>
     <color name="alert_info">#33B5E5</color>
 
+    <color name="gradient_blue_1">#06C7F1</color>
+    <color name="gradient_blue_2">#07B9E0</color>
+    <color name="gradient_blue_3">#0648F1</color>
+    <color name="blue_black">#0C0926</color>
 </resources>

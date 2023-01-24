@@ -56,7 +56,7 @@ class FragmentRegister : Fragment() {
 
     private fun view(){
         val spannable = SpannableStringBuilder(binding.tvLogin.text.toString())
-        val blueColor = ForegroundColorSpan(Color.parseColor("#4496B3"))
+        val blueColor = ForegroundColorSpan(R.color.blue_500)
 
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
@@ -183,7 +183,7 @@ class FragmentRegister : Fragment() {
     }
 
     private fun binding(){
-        val intent = Intent(activity, MainActivity::class.java)
+        val intent = Intent(activity, Weather::class.java)
         startActivity(intent)
     }
 
@@ -247,55 +247,55 @@ class FragmentRegister : Fragment() {
 
 
     private fun nullFullName(): Boolean {
-        binding.tilFullName.error = "Nama lengkap wajib diisi"
+        binding.tilFullName.error = getString(R.string.null_full_name)
         binding.etFullName.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }
 
     private fun nullUsername(): Boolean{
-        binding.tilUsername.error = "Username wajib diisi"
+        binding.tilUsername.error = getString(R.string.null_username)
         binding.etUsername.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }
 
     private fun nullEmail(): Boolean{
-        binding.tilEmail.error = "Email wajib diisi"
+        binding.tilEmail.error = getString(R.string.null_email)
         binding.etEmail.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }
 
     private fun nullPassword(): Boolean{
-        binding.tilPassword.error = "Password wajib diisi"
+        binding.tilPassword.error = getString(R.string.null_password)
         binding.etPassword.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }
 
     private fun nullConfirmPassword(): Boolean{
-        binding.tilConfirmPassword.error = "Konfirmasi password wajib diisi"
+        binding.tilConfirmPassword.error = getString(R.string.null_confirm_password)
         binding.etConfirmPassword.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }
 
     private fun regexMinFullname(){
-        binding.tilFullName.error = "Nama lengkap minimal 2 karakter"
+        binding.tilFullName.error = getString(R.string.min_full_name)
         binding.etFullName.setBackgroundResource(R.drawable.bg_textbox_red)
         validName = false
     }
 
     private fun regexFullName(){
-        binding.tilFullName.error = "Nama lengkap tidak bisa berisi angka"
+        binding.tilFullName.error = getString(R.string.valid_full_name)
         binding.etFullName.setBackgroundResource(R.drawable.bg_textbox_red)
         validName = false
     }
 
     private fun regexMinUsername(){
-        binding.tilUsername.error = "Username minimal berisi 6 karakter"
+        binding.tilUsername.error = getString(R.string.min_username)
         binding.etUsername.setBackgroundResource(R.drawable.bg_textbox_red)
         validUsername = false
     }
 
     private fun regexUsername(){
-        binding.tilUsername.error = "Username tidak bisa menggunakan simbol selain . dan _"
+        binding.tilUsername.error = getString(R.string.valid_username)
         binding.etUsername.setBackgroundResource(R.drawable.bg_textbox_red)
         validUsername = false
     }
@@ -305,25 +305,25 @@ class FragmentRegister : Fragment() {
     }
 
     private fun regexEmailResult(){
-        binding.tilEmail.error = "Format email tidak sesuai"
+        binding.tilEmail.error = getString(R.string.valid_email)
         binding.etEmail.setBackgroundResource(R.drawable.bg_textbox_red)
         validEmail = false
     }
 
     private fun regexMinPassword(){
-        binding.tilPassword.error = "Password minimal berisi 6 karakter, 1 huruf kapital dan 1 angka"
+        binding.tilPassword.error = getString(R.string.min_password)
         binding.etPassword.setBackgroundResource(R.drawable.bg_textbox_red)
         validPassword = false
     }
 
     private fun regexPassword(){
-        binding.tilPassword.error = "Password minimal berisi 1 huruf kapital dan 1 angka"
+        binding.tilPassword.error = getString(R.string.valid_password)
         binding.etPassword.setBackgroundResource(R.drawable.bg_textbox_red)
         validPassword = false
     }
 
     private fun regexConfirmPassword(){
-        binding.tilConfirmPassword.error = "Konfirmasi password tidak sesuai"
+        binding.tilConfirmPassword.error = getString(R.string.valid_confirm_password)
         binding.etConfirmPassword.setBackgroundResource(R.drawable.bg_textbox_red)
         validConfirmPassword = false
     }

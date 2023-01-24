@@ -1,7 +1,6 @@
 package com.sekar.paninti
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.Spannable
@@ -13,9 +12,7 @@ import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import com.google.android.material.textfield.TextInputLayout
 import com.sekar.paninti.databinding.FragmentLoginBinding
 
 class FragmentLogin : Fragment() {
@@ -45,7 +42,7 @@ class FragmentLogin : Fragment() {
 
     private fun view(){
         val spannable = SpannableStringBuilder(binding.tvSignUp.text.toString())
-        val blueColor = ForegroundColorSpan(Color.parseColor("#4496B3"))
+        val blueColor = ForegroundColorSpan(R.color.blue_500)
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
                 val fragment = FragmentRegister()
@@ -108,7 +105,7 @@ class FragmentLogin : Fragment() {
     }
 
     private fun binding(){
-        val intent = Intent(activity, MainActivity::class.java)
+        val intent = Intent(activity, Weather::class.java)
         startActivity(intent)
     }
 
@@ -138,13 +135,13 @@ class FragmentLogin : Fragment() {
     }
 
     private fun nullEmailOrUsername(): Boolean {
-        binding.tilEmailOrUsername.error = "Email atau Username wajib diisi"
+        binding.tilEmailOrUsername.error = getString(R.string.null_email_username)
         binding.etEmailOrUsername.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }
 
     private fun nullPassword(): Boolean{
-        binding.tilPassword.error = "Password wajib diisi"
+        binding.tilPassword.error = getString(R.string.null_password)
         binding.etPassword.setBackgroundResource(R.drawable.bg_textbox_red)
         return false
     }

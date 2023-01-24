@@ -17,4 +17,35 @@
     <string name="gender">Jenis Kelamin</string>
     <string name="male">Laki-laki</string>
     <string name="female">Perempuan</string>
+
+    <!-- Validasi form login & register -->
+    <string name="null_full_name">Nama lengkap wajib diisi</string>
+    <string name="null_username">Username wajib diisi</string>
+    <string name="null_email">Email wajib diisi</string>
+    <string name="null_email_username">Email atau Username wajib diisi</string>
+    <string name="null_password">Password wajib diisi</string>
+    <string name="null_confirm_password">Konfirmasi password wajib diisi</string>
+    <string name="min_full_name">Nama lengkap minimal 2 karakter</string>
+    <string name="valid_full_name">Nama lengkap tidak bisa berisi angka</string>
+    <string name="min_username">Username minimal berisi 6 karakter</string>
+    <string name="valid_username">Username tidak bisa menggunakan simbol selain . dan _</string>
+    <string name="valid_email">Format email tidak sesuai</string>
+    <string name="min_password">Password minimal berisi 6 karakter, 1 huruf kapital dan 1 angka</string>
+    <string name="valid_password">Password minimal berisi 1 huruf kapital dan 1 angka</string>
+    <string name="valid_confirm_password">Konfirmasi password tidak sesuai</string>
+
+    <string name="monday">Monday</string>
+    <string name="celcius_27">27°</string>
+    <string name="seven_days">7 Days</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="celcius_24">24</string>
+    <string name="celcius_17">/ 17°</string>
+    <string name="cloudy">Cloudy</string>
+    <string name="wind_speed">13 km/h</string>
+    <string name="wind">Wind</string>
+    <string name="humidity_percent">24%</string>
+    <string name="humidity">Humidity</string>
+    <string name="chance_percent">82%</string>
+    <string name="chance_of_rain">Chance of rain</string>
+
 </resources>
