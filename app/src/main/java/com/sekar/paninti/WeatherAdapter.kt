@@ -7,12 +7,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
- class WeatherAdapter(private val context: FragmentTomorrow, private val weather: List<WeatherWeek>) : RecyclerView.Adapter<WeatherHolder>() {
+class WeatherAdapter(private val context: FragmentTomorrow, private val weather: List<WeatherWeek>) : RecyclerView.Adapter<WeatherHolder>() {
 
      override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): WeatherHolder {
          return WeatherHolder(
-             LayoutInflater.from(viewGroup.context)
-                 .inflate(R.layout.item_weather_week, viewGroup, false)
+             LayoutInflater.from(viewGroup.context).inflate(R.layout.item_weather_week, viewGroup, false)
          )
      }
 
@@ -23,7 +22,7 @@ import androidx.recyclerview.widget.RecyclerView
      }
  }
 
-    class WeatherHolder(view: View) : RecyclerView.ViewHolder(view) {
+class WeatherHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val tvDay = view.findViewById<TextView>(R.id.tvDay)
         private val ivWeather = view.findViewById<ImageView>(R.id.imgWeather)
         private val tvWeather = view.findViewById<TextView>(R.id.tvWeather)

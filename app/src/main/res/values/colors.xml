@@ -23,5 +23,7 @@
     <color name="gradient_blue_1">#06C7F1</color>
     <color name="gradient_blue_2">#07B9E0</color>
     <color name="gradient_blue_3">#0648F1</color>
+    <color name="blue_card_background">#2352CB</color>
+    <color name="yellow">#FAFD74</color>
     <color name="blue_black">#0C0926</color>
 </resources>

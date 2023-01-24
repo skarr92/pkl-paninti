@@ -34,18 +34,40 @@
     <string name="valid_password">Password minimal berisi 1 huruf kapital dan 1 angka</string>
     <string name="valid_confirm_password">Konfirmasi password tidak sesuai</string>
 
-    <string name="monday">Monday</string>
-    <string name="celcius_27">27°</string>
     <string name="seven_days">7 Days</string>
+    <string name="next_seven_days">7 days</string>
+    <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
-    <string name="celcius_24">24</string>
-    <string name="celcius_17">/ 17°</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="per_17">/ 17°</string>
+    <string name="celcius_17">17°</string>
+    <string name="celcius_18">18°</string>
+    <string name="celcius_22">22°</string>
+    <string name="celcius_24">24°</string>
+    <string name="celcius_29">29°</string>
+    <string name="celcius_30">30°</string>
+    <string name="celcius">°C</string>
+    <string name="date">Monday, 17 May</string>
+    <string name="location">Minsk</string>
     <string name="cloudy">Cloudy</string>
+    <string name="rainy">Rainy</string>
+    <string name="storm">Storm</string>
+    <string name="sunny">Sunny</string>
     <string name="wind_speed">13 km/h</string>
     <string name="wind">Wind</string>
     <string name="humidity_percent">24%</string>
     <string name="humidity">Humidity</string>
     <string name="chance_percent">82%</string>
     <string name="chance_of_rain">Chance of rain</string>
+    <string name="clock_10">10:00</string>
+    <string name="clock_11">11:00</string>
+    <string name="clock_12">12:00</string>
+    <string name="clock_13">13:00</string>
 
 </resources>

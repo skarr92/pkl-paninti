@@ -161,6 +161,60 @@
         <item name="android:letterSpacing">-0.04</item>
     </style>
 
+    <style name="TextAppearance.Weather.LargeTitle" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/maven_pro_medium</item>
+        <item name="android:fontFamily">@font/maven_pro_medium</item>
+        <item name="android:textSize">85sp</item>
+        <item name="lineHeight">@dimen/large_title_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Weather.Title" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/maven_pro_medium</item>
+        <item name="android:fontFamily">@font/maven_pro_medium</item>
+        <item name="android:textSize">45sp</item>
+        <item name="lineHeight">@dimen/title_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Weather.Title2" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/maven_pro_medium</item>
+        <item name="android:fontFamily">@font/maven_pro_medium</item>
+        <item name="android:textSize">56sp</item>
+        <item name="lineHeight">@dimen/title_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Weather.Title3" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/maven_pro_medium</item>
+        <item name="android:fontFamily">@font/maven_pro_medium</item>
+        <item name="android:textSize">32sp</item>
+        <item name="lineHeight">@dimen/title_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Weather.Body" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/maven_pro_medium</item>
+        <item name="android:fontFamily">@font/maven_pro_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="lineHeight">@dimen/body_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
+    <style name="TextAppearance.Weather.Body2" parent="Base.TextAppearance.AppCompat">
+        <item name="fontFamily">@font/opensans_regular</item>
+        <item name="android:fontFamily">@font/opensans_regular</item>
+        <item name="android:textSize">18sp</item>
+        <item name="lineHeight">@dimen/body_line_height</item>
+        <item name="android:lineSpacingExtra">1sp</item>
+        <item name="android:letterSpacing">-0.03</item>
+    </style>
+
     <!-- Text Field Theme. -->
     <style name="Widget.Paninti.TextInputLayout.FilledBox" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
         <item name="materialThemeOverlay">

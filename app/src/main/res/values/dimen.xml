@@ -63,6 +63,8 @@
     <dimen name="close_icon_size">26dp</dimen>
     <dimen name="button_height">40dp</dimen>
 
+    <dimen name="cloud_width_height">170dp</dimen>
+
     <!-- Elevation -->
     <dimen name="toolbar_elevation">8dp</dimen>
     <dimen name="card_elevation">6dp</dimen>

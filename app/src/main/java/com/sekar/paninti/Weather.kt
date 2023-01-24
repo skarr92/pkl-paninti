@@ -8,6 +8,6 @@ class Weather : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_weather)
 
-        supportFragmentManager.beginTransaction().replace(R.id.containerWeather, FragmentTomorrow()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.containerWeather, FragmentWeatherHome()).commit()
     }
 }

@@ -1,9 +1,12 @@
 package com.sekar.paninti
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sekar.paninti.databinding.FragmentTomorrowBinding
@@ -40,54 +43,52 @@ class FragmentTomorrow : Fragment() {
 
         val listWeatherWeek = listOf(
             WeatherWeek(
-                "Monday",
+                getString(R.string.monday),
                 R.drawable.ic_cloud,
-                "Cloudy",
-                "29°"
+                getString(R.string.cloudy),
+                getString(R.string.celcius_29)
             ),
             WeatherWeek(
-                "Tuesday",
+                getString(R.string.tuesday),
                 R.drawable.ic_cloud,
-                "Cloudy",
-                "24°"
+                getString(R.string.cloudy),
+                getString(R.string.celcius_24)
             ),
             WeatherWeek(
-                "Wednesday",
+                getString(R.string.wednesday),
                 R.drawable.ic_rain,
-                "Rainy",
-                "17°"
+                getString(R.string.rainy),
+                getString(R.string.celcius_17)
             ),
             WeatherWeek(
-                "Thursday",
+                getString(R.string.thursday),
                 R.drawable.ic_lightning,
-                "Storm",
-                "18°"
+                getString(R.string.storm),
+                getString(R.string.celcius_18)
             ),
             WeatherWeek(
-                "Friday",
+                getString(R.string.friday),
                 R.drawable.ic_sun,
-                "Sunny",
-                "22°"
+                getString(R.string.sunny),
+                getString(R.string.celcius_22)
             ),
             WeatherWeek(
-                "Saturday",
+                getString(R.string.saturday),
                 R.drawable.ic_sun,
-                "Sunny",
-                "24°"
+                getString(R.string.sunny),
+                getString(R.string.celcius_24)
             ),
             WeatherWeek(
-                "Sunday",
+                getString(R.string.sunday),
                 R.drawable.ic_sun,
-                "Sunny",
-                "30°"
-            ),
+                getString(R.string.sunny),
+                getString(R.string.celcius_30)
+            )
         )
 
-        val recyclerView = binding.rvWeather
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = WeatherAdapter(this, listWeatherWeek)
-
+        binding.rvWeather.layoutManager =  LinearLayoutManager(context)
+        binding.rvWeather.setHasFixedSize(true)
+        binding.rvWeather.adapter = WeatherAdapter(this, listWeatherWeek)
     }
 
 }
