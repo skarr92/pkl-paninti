@@ -35,7 +35,6 @@
                         android:layout_marginTop="@dimen/screen_margin"
                         android:layout_marginEnd="@dimen/screen_margin"
                         android:src="@drawable/img_menu_vertical"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -70,7 +69,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/large_margin"
                         android:src="@drawable/img_cloudy"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.22"
                         app:layout_constraintStart_toStartOf="parent"
@@ -93,7 +91,6 @@
                         android:id="@+id/tvCelcius24"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/celcius_24"
                         android:textAppearance="@style/TextAppearance.Weather.Title2"
                         android:textColor="@color/white"
@@ -132,12 +129,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/view_height"
                         android:layout_marginHorizontal="@dimen/semi_huge_margin"
-                        android:layout_marginVertical="@dimen/large_margin"
+                        android:layout_marginVertical="@dimen/screen_margin"
                         android:visibility="visible"
                         android:background="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/tvCloudy"/>
+                        app:layout_constraintTop_toBottomOf="@+id/imgCloudy"/>
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imgWind"
@@ -145,7 +142,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_wind"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.13"
                         app:layout_constraintStart_toStartOf="parent"
@@ -185,7 +181,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_humidity"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -223,7 +218,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_moisture"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.87"
                         app:layout_constraintStart_toStartOf="parent"

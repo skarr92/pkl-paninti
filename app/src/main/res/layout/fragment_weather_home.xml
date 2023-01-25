@@ -47,7 +47,6 @@
                         android:layout_marginTop="@dimen/screen_margin"
                         android:layout_marginEnd="@dimen/screen_margin"
                         android:src="@drawable/img_menu_vertical"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,7 +54,7 @@
                         android:id="@+id/imgPin"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/normal_margin"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:src="@drawable/ic_pin"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.44"
@@ -66,7 +65,7 @@
                         android:id="@+id/tvLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/normal_margin"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/location"
                         android:textAppearance="@style/TextAppearance.Subtitle1"
                         android:textColor="@color/white"
@@ -136,7 +135,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_wind"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.13"
                         app:layout_constraintStart_toStartOf="parent"
@@ -176,7 +174,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_humidity"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -214,7 +211,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_moisture"
-                        android:textAlignment="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.87"
                         app:layout_constraintStart_toStartOf="parent"
@@ -283,7 +279,6 @@
                 android:layout_marginTop="@dimen/medium_margin"
                 android:layout_marginEnd="@dimen/small_margin"
                 android:src="@drawable/ic_forward"
-                android:textAlignment="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvGradient" />
 
