@@ -42,41 +42,37 @@ class FragmentWeatherHome : Fragment() {
 
     private fun recyclerViewDay(){
 
-        val listWeatherDay = listOf(
-            WeatherDay(
-                getString(R.string.humidity_percent),
-                R.drawable.ic_cloud,
-                getString(R.string.clock_10)
-            ),
-            WeatherDay(
-                getString(R.string.humidity_percent),
-                R.drawable.ic_two_cloud,
-                getString(R.string.clock_11)
-            ),
-            WeatherDay(
-                getString(R.string.humidity_percent),
-                R.drawable.ic_lightning,
-                getString(R.string.clock_12)
-            ),
-            WeatherDay(
-                getString(R.string.humidity_percent),
-                R.drawable.ic_rain,
-                getString(R.string.clock_13)
-            )
-        )
+//        val listWeatherDay = listOf(
+//            WeatherDay(
+//                getString(R.string.humidity_percent),
+//                R.drawable.ic_cloud,
+//                getString(R.string.clock_10)
+//            ),
+//            WeatherDay(
+//                getString(R.string.humidity_percent),
+//                R.drawable.ic_two_cloud,
+//                getString(R.string.clock_11)
+//            ),
+//            WeatherDay(
+//                getString(R.string.humidity_percent),
+//                R.drawable.ic_lightning,
+//                getString(R.string.clock_12)
+//            ),
+//            WeatherDay(
+//                getString(R.string.humidity_percent),
+//                R.drawable.ic_rain,
+//                getString(R.string.clock_13)
+//            )
+//        )
 
         binding.rvWeatherDay.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         binding.rvWeatherDay.setHasFixedSize(true)
-        binding.rvWeatherDay.adapter = HomeAdapter(this, listWeatherDay)
+        binding.rvWeatherDay.adapter = HomeAdapter()
     }
 
     private fun nextSevenDay(){
         binding.tvNextSevenDays.setOnClickListener{
            tomorrow()
-        }
-
-        binding.imgForward.setOnClickListener{
-            tomorrow()
         }
     }
 

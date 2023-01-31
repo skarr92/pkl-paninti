@@ -5,9 +5,30 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.AsyncListDiffer
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 
-class WeatherAdapter(private val context: FragmentTomorrow, private val weather: List<WeatherWeek>) : RecyclerView.Adapter<WeatherHolder>() {
+class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
+
+    inner class WeatherHolder(view: View) : RecyclerView.ViewHolder(view){
+        val tvDay = view.findViewById<TextView>(R.id.tvDay)
+        val ivWeather = view.findViewById<ImageView>(R.id.imgWeather)
+        val tvWeather = view.findViewById<TextView>(R.id.tvWeather)
+        val tvCelcius = view.findViewById<TextView>(R.id.tvCel)
+    }
+
+    private val differCallback = object : DiffUtil.ItemCallback<WeatherWeek>(){
+        override fun areItemsTheSame(oldItem: WeatherWeek, newItem: WeatherWeek): Boolean {
+            return oldItem.txtDay == newItem.txtDay
+        }
+
+        override fun areContentsTheSame(oldItem: WeatherWeek, newItem: WeatherWeek): Boolean {
+            return oldItem == newItem
+        }
+    }
+
+    val differ = AsyncListDiffer(this, differCallback)
 
      override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): WeatherHolder {
          return WeatherHolder(
@@ -15,23 +36,16 @@ class WeatherAdapter(private val context: FragmentTomorrow, private val weather:
          )
      }
 
-     override fun getItemCount(): Int = weather.size
+     override fun getItemCount(): Int {
+         return differ.currentList.size
+     }
 
      override fun onBindViewHolder(holder: WeatherHolder, position: Int) {
-         holder.bindWeather(weather[position])
+         val weather = differ.currentList[position]
+
+         holder.tvDay.text = weather.txtDay
+         holder.ivWeather.setImageResource(weather.imgWeather)
+         holder.tvWeather.text = weather.txtWeather
+         holder.tvCelcius.text = weather.txtCelcius
      }
  }
-
-class WeatherHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val tvDay = view.findViewById<TextView>(R.id.tvDay)
-        private val ivWeather = view.findViewById<ImageView>(R.id.imgWeather)
-        private val tvWeather = view.findViewById<TextView>(R.id.tvWeather)
-        private val tvCelcius = view.findViewById<TextView>(R.id.tvCel)
-
-        fun bindWeather(weather: WeatherWeek) {
-            tvDay.text = weather.txtDay
-            ivWeather.setImageResource(weather.imgWeather)
-            tvWeather.text = weather.txtWeather
-            tvCelcius.text = weather.txtCelcius
-        }
-    }

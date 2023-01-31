@@ -29,6 +29,16 @@
                     android:layout_height="match_parent">
 
                     <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:layout_marginStart="@dimen/screen_margin"
+                        android:src="@drawable/ic_back"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imgMenuVertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -37,17 +47,6 @@
                         android:src="@drawable/img_menu_vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgCalendar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/normal_margin"
-                        android:src="@drawable/ic_calendar"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.45"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgMenuVertical" />
 
                     <TextView
                         android:id="@+id/tvWeeks"
@@ -58,8 +57,8 @@
                         android:textAppearance="@style/TextAppearance.Title"
                         android:textColor="@color/white"
                         android:textStyle="bold"
+                        android:drawableStart="@drawable/ic_calendar"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.6"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/imgMenuVertical" />
 
@@ -72,7 +71,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.22"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgCalendar" />
+                        app:layout_constraintTop_toBottomOf="@id/tvWeeks" />
 
                     <TextView
                         android:id="@+id/tvTomorrow"
@@ -85,17 +84,17 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.65"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgCalendar" />
+                        app:layout_constraintTop_toBottomOf="@id/tvWeeks" />
 
                     <TextView
                         android:id="@+id/tvCelcius24"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/celcius_24"
+                        android:text="@string/cel_24"
                         android:textAppearance="@style/TextAppearance.Weather.Title2"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.66"
+                        app:layout_constraintHorizontal_bias="0.63"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvTomorrow" />
 
@@ -136,67 +135,51 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imgCloudy"/>
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgWind"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:src="@drawable/ic_wind"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.13"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
-
                     <TextView
                         android:id="@+id/tvWindSpeed"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/extra_small_margin"
-                        android:text="@string/wind_speed"
-                        android:textAppearance="@style/TextAppearance.Caption1"
-                        android:textColor="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.12"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgWind" />
-
-                    <TextView
-                        android:id="@+id/tvWind"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/extra_small_margin"
-                        android:layout_marginBottom="@dimen/screen_margin"
-                        android:text="@string/wind"
-                        android:textAppearance="@style/TextAppearance.Caption1"
-                        android:textColor="@color/label_tertiary"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.135"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvWindSpeed" />
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgHumidity"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/screen_margin"
-                        android:src="@drawable/ic_humidity"
-                        app:layout_constraintEnd_toEndOf="parent"
+                        android:drawableTop="@drawable/ic_wind"
+                        android:text="@string/wind_speed"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Caption1"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toStartOf="@+id/tvHumidityPercent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/viewLine" />
 
                     <TextView
-                        android:id="@+id/tvHumidityPercent"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/tvWind"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/extra_small_margin"
+                        android:layout_marginBottom="@dimen/screen_margin"
+                        android:text="@string/wind"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.Caption1"
+                        android:textColor="@color/label_tertiary"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvHumidity"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvWindSpeed" />
+
+                    <TextView
+                        android:id="@+id/tvHumidityPercent"
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:drawableTop="@drawable/ic_humidity"
+                        android:gravity="center_horizontal"
                         android:text="@string/humidity_percent"
                         android:textAppearance="@style/TextAppearance.Caption1"
                         android:textColor="@color/white"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgHumidity" />
+                        app:layout_constraintEnd_toStartOf="@+id/tvChancePercent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvWindSpeed"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
 
                     <TextView
                         android:id="@+id/tvHumidity"
@@ -205,36 +188,29 @@
                         android:layout_marginTop="@dimen/extra_small_margin"
                         android:layout_marginBottom="@dimen/screen_margin"
                         android:text="@string/humidity"
+                        android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Caption1"
                         android:textColor="@color/label_tertiary"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/tvChanceOfRain"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvWind"
                         app:layout_constraintTop_toBottomOf="@id/tvHumidityPercent" />
-
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgRain"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:src="@drawable/ic_moisture"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.87"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
 
                     <TextView
                         android:id="@+id/tvChancePercent"
-                        android:layout_width="wrap_content"
+                        android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/extra_small_margin"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:drawableTop="@drawable/ic_moisture"
                         android:text="@string/chance_percent"
+                        android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Caption1"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.86"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgRain" />
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvHumidityPercent"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
 
                     <TextView
                         android:id="@+id/tvChanceOfRain"
@@ -248,8 +224,8 @@
                         android:textColor="@color/label_tertiary"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.89"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvHumidity"
                         app:layout_constraintTop_toBottomOf="@id/tvChancePercent" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>

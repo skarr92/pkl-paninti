@@ -50,6 +50,7 @@
     <string name="celcius_18">18°</string>
     <string name="celcius_22">22°</string>
     <string name="celcius_24">24°</string>
+    <string name="cel_24">24</string>
     <string name="celcius_29">29°</string>
     <string name="celcius_30">30°</string>
     <string name="celcius">°C</string>
