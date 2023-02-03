@@ -30,7 +30,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvCelcius"
+                        android:id="@+id/tvCel"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/screen_margin"
@@ -75,7 +75,7 @@
                         app:layout_constraintTop_toBottomOf="@id/tvLocation" />
 
                     <TextView
-                        android:id="@+id/tvCelcius29"
+                        android:id="@+id/tvCelcius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/celcius_29"
@@ -94,7 +94,7 @@
                         android:textColor="@color/yellow"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvCelcius29" />
+                        app:layout_constraintTop_toBottomOf="@id/tvCelcius" />
 
                     <TextView
                         android:id="@+id/tvDate"

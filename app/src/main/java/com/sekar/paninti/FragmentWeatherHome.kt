@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.TypedArrayUtils.getText
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.sekar.paninti.databinding.FragmentWeatherHomeBinding
 
 class FragmentWeatherHome : Fragment() {
 
+    private val HomeAdpt by lazy { HomeAdapter() }
     private lateinit var binding: FragmentWeatherHomeBinding
 
     override fun onCreateView(
@@ -42,32 +44,23 @@ class FragmentWeatherHome : Fragment() {
 
     private fun recyclerViewDay(){
 
-//        val listWeatherDay = listOf(
-//            WeatherDay(
-//                getString(R.string.humidity_percent),
-//                R.drawable.ic_cloud,
-//                getString(R.string.clock_10)
-//            ),
-//            WeatherDay(
-//                getString(R.string.humidity_percent),
-//                R.drawable.ic_two_cloud,
-//                getString(R.string.clock_11)
-//            ),
-//            WeatherDay(
-//                getString(R.string.humidity_percent),
-//                R.drawable.ic_lightning,
-//                getString(R.string.clock_12)
-//            ),
-//            WeatherDay(
-//                getString(R.string.humidity_percent),
-//                R.drawable.ic_rain,
-//                getString(R.string.clock_13)
-//            )
-//        )
+        HomeAdpt.differ.submitList(loadData())
+        binding.apply {
+            binding.rvWeatherDay.apply {
+                layoutManager = LinearLayoutManager(this.context, LinearLayoutManager.HORIZONTAL, false)
+                adapter = HomeAdpt
+            }
+        }
+    }
 
-        binding.rvWeatherDay.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        binding.rvWeatherDay.setHasFixedSize(true)
-        binding.rvWeatherDay.adapter = HomeAdapter()
+    fun loadData(): MutableList<WeatherDay>{
+        val data : MutableList<WeatherDay> = mutableListOf()
+
+            data.add(WeatherDay(getString(R.string.humidity_percent), R.drawable.ic_cloud,getString(R.string.clock_10)))
+            data.add(WeatherDay(getString(R.string.humidity_percent), R.drawable.ic_cloud,getString(R.string.clock_11)))
+            data.add(WeatherDay(getString(R.string.humidity_percent), R.drawable.ic_cloud,getString(R.string.clock_12)))
+            data.add(WeatherDay(getString(R.string.humidity_percent), R.drawable.ic_cloud,getString(R.string.clock_13)))
+        return data
     }
 
     private fun nextSevenDay(){

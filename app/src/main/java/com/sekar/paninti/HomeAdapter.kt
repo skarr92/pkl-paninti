@@ -8,16 +8,23 @@ import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.sekar.paninti.databinding.FragmentWeatherHomeBinding
+import com.sekar.paninti.databinding.ItemWeatherDayBinding
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
+    private lateinit var binding: ItemWeatherDayBinding
 
-    inner class HomeHolder(view: View) : RecyclerView.ViewHolder(view){
-        val tvHumidity = view.findViewById<TextView>(R.id.tvHumidity)
-        val ivWeather = view.findViewById<ImageView>(R.id.imgWeatherDay)
-        val tvHour = view.findViewById<TextView>(R.id.tvHour)
+    inner class HomeHolder : RecyclerView.ViewHolder(binding.root) {
+        fun setData(item: WeatherDay) {
+            binding.apply {
+                binding.tvHumidity.text = item.txtHumidity
+                binding.ivWeatherDay.setImageResource(item.imgWeatherDay)
+                binding.tvHour.text = item.txtHour
+            }
+        }
     }
 
-    private val differCallback = object : DiffUtil.ItemCallback<WeatherDay>(){
+    private val differCallback = object : DiffUtil.ItemCallback<WeatherDay>() {
         override fun areItemsTheSame(oldItem: WeatherDay, newItem: WeatherDay): Boolean {
             return oldItem.txtHour == newItem.txtHour
         }
@@ -30,9 +37,8 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
     val differ = AsyncListDiffer(this, differCallback)
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): HomeHolder {
-        return HomeHolder(
-            LayoutInflater.from(viewGroup.context).inflate(R.layout.item_weather_day, viewGroup, false)
-        )
+        binding = ItemWeatherDayBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+        return HomeHolder()
     }
 
     override fun getItemCount(): Int {
@@ -40,11 +46,8 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
     }
 
     override fun onBindViewHolder(holder: HomeHolder, position: Int) {
-        val day = differ.currentList[position]
-
-        holder.tvHumidity.text = day.txtHumidity
-        holder.ivWeather.setImageResource(day.imgWeatherDay)
-        holder.tvHour.text = day.txtHour
+        holder.setData(differ.currentList[position])
+        holder.setIsRecyclable(true)
     }
 
 }

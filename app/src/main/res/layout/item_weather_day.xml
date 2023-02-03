@@ -34,7 +34,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/imgWeatherDay"
+                android:id="@+id/ivWeatherDay"
                 android:layout_width="@dimen/image_brand_height"
                 android:layout_height="@dimen/image_brand_height"
                 android:layout_marginVertical="@dimen/small_margin"

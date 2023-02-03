@@ -8,14 +8,21 @@ import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.sekar.paninti.databinding.ItemWeatherDayBinding
+import com.sekar.paninti.databinding.ItemWeatherWeekBinding
 
 class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
+    private lateinit var binding : ItemWeatherWeekBinding
 
-    inner class WeatherHolder(view: View) : RecyclerView.ViewHolder(view){
-        val tvDay = view.findViewById<TextView>(R.id.tvDay)
-        val ivWeather = view.findViewById<ImageView>(R.id.imgWeather)
-        val tvWeather = view.findViewById<TextView>(R.id.tvWeather)
-        val tvCelcius = view.findViewById<TextView>(R.id.tvCel)
+    inner class WeatherHolder : RecyclerView.ViewHolder(binding.root) {
+        fun setData(item: WeatherWeek) {
+            binding.apply {
+                binding.tvDay.text = item.txtDay
+                binding.imgWeather.setImageResource(item.imgWeather)
+                binding.tvWeather.text = item.txtWeather
+                binding.tvCel.text = item.txtCelcius
+            }
+        }
     }
 
     private val differCallback = object : DiffUtil.ItemCallback<WeatherWeek>(){
@@ -31,9 +38,8 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
     val differ = AsyncListDiffer(this, differCallback)
 
      override fun onCreateViewHolder(viewGroup: ViewGroup, p1: Int): WeatherHolder {
-         return WeatherHolder(
-             LayoutInflater.from(viewGroup.context).inflate(R.layout.item_weather_week, viewGroup, false)
-         )
+         binding = ItemWeatherWeekBinding.inflate(LayoutInflater.from(viewGroup.context), viewGroup, false)
+         return WeatherHolder()
      }
 
      override fun getItemCount(): Int {
@@ -41,11 +47,7 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
      }
 
      override fun onBindViewHolder(holder: WeatherHolder, position: Int) {
-         val weather = differ.currentList[position]
-
-         holder.tvDay.text = weather.txtDay
-         holder.ivWeather.setImageResource(weather.imgWeather)
-         holder.tvWeather.text = weather.txtWeather
-         holder.tvCelcius.text = weather.txtCelcius
+         holder.setData(differ.currentList[position])
+         holder.setIsRecyclable(true)
      }
  }
