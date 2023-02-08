@@ -1,7 +1,8 @@
-package com.sekar.paninti
+package com.sekar.paninti.forecast.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sekar.paninti.R
 
 class Weather : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,4 +1,4 @@
-package com.sekar.paninti
+package com.sekar.paninti.login_register
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,6 +13,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.sekar.paninti.R
+import com.sekar.paninti.forecast.ui.main.view.Weather
 import com.sekar.paninti.databinding.FragmentLoginBinding
 
 class FragmentLogin : Fragment() {

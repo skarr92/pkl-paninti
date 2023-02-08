@@ -32,8 +32,8 @@
                         android:id="@+id/imgBack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
                         android:layout_marginStart="@dimen/screen_margin"
+                        android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_back"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -53,11 +53,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/normal_margin"
+                        android:drawableStart="@drawable/ic_calendar"
                         android:text="@string/seven_days"
                         android:textAppearance="@style/TextAppearance.Title"
                         android:textColor="@color/white"
                         android:textStyle="bold"
-                        android:drawableStart="@drawable/ic_calendar"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/imgMenuVertical" />
@@ -94,7 +94,7 @@
                         android:textAppearance="@style/TextAppearance.Weather.Title2"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.63"
+                        app:layout_constraintHorizontal_bias="0.65"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvTomorrow" />
 
@@ -102,8 +102,8 @@
                         android:id="@+id/tvCelcius17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/semi_huge_margin"
                         android:layout_marginStart="@dimen/small_margin"
+                        android:layout_marginTop="@dimen/semi_huge_margin"
                         android:text="@string/per_17"
                         android:textAppearance="@style/TextAppearance.Weather.Title3"
                         android:textColor="@color/white"
@@ -119,7 +119,7 @@
                         android:textAppearance="@style/TextAppearance.Weather.Body"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.6"
+                        app:layout_constraintHorizontal_bias="0.61"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvCelcius24" />
 
@@ -129,11 +129,11 @@
                         android:layout_height="@dimen/view_height"
                         android:layout_marginHorizontal="@dimen/semi_huge_margin"
                         android:layout_marginVertical="@dimen/screen_margin"
-                        android:visibility="visible"
                         android:background="@color/white"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgCloudy"/>
+                        app:layout_constraintTop_toBottomOf="@+id/imgCloudy" />
 
                     <TextView
                         android:id="@+id/tvWindSpeed"

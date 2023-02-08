@@ -1,7 +1,8 @@
-package com.sekar.paninti
+package com.sekar.paninti.login_register
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.sekar.paninti.R
 
 class LoginRegister : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -22,7 +22,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/tvHumidity"
+                android:id="@+id/tvHmdty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/small_margin"
@@ -42,7 +42,7 @@
                 app:layout_constraintBottom_toTopOf="@+id/tvHour"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvHumidity" />
+                app:layout_constraintTop_toBottomOf="@+id/tvHmdty" />
 
             <TextView
                 android:id="@+id/tvHour"

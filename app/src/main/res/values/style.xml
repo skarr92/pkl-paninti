@@ -182,7 +182,7 @@
     <style name="TextAppearance.Weather.Title2" parent="Base.TextAppearance.AppCompat">
         <item name="fontFamily">@font/maven_pro_medium</item>
         <item name="android:fontFamily">@font/maven_pro_medium</item>
-        <item name="android:textSize">56sp</item>
+        <item name="android:textSize">64sp</item>
         <item name="lineHeight">@dimen/title_line_height</item>
         <item name="android:lineSpacingExtra">1sp</item>
         <item name="android:letterSpacing">-0.03</item>
