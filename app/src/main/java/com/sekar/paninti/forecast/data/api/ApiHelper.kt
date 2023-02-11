@@ -3,8 +3,8 @@ package com.sekar.paninti.forecast.data.api
 class ApiHelper(private val apiService: ApiService) {
 
     companion object{
-        private const val API_KEY = "eae09993ff7a74db3f2636e82a313a77"
+        private const val API_KEY = "6610b475e8ba493a93444335230302"
     }
 
-    suspend fun getForecast() = apiService.getForecast("cimahi", API_KEY, "metric")
+    suspend fun getForecast() = apiService.getForecast(API_KEY, "Cimahi", "7", "no", "no")
 }

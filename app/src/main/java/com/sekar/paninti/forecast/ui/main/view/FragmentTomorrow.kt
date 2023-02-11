@@ -12,16 +12,19 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.sekar.paninti.R
 import com.sekar.paninti.forecast.ui.main.adapter.WeatherAdapter
 import com.sekar.paninti.databinding.FragmentTomorrowBinding
 import com.sekar.paninti.forecast.data.api.ApiHelper
 import com.sekar.paninti.forecast.data.api.RetrofitBuilder
-import com.sekar.paninti.forecast.data.model.WeatherData
+import com.sekar.paninti.forecast.data.model.Forecastday
 import com.sekar.paninti.forecast.ui.base.ViewModelFactory
 import com.sekar.paninti.forecast.ui.main.adapter.HomeAdapter
 import com.sekar.paninti.forecast.ui.main.viewmodel.MainViewModel
 import com.sekar.paninti.forecast.utils.Status
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 
 class FragmentTomorrow : Fragment() {
 
@@ -71,21 +74,59 @@ class FragmentTomorrow : Fragment() {
                 when (resource.status) {
                     Status.SUCCESS -> {
                         binding.rvWeather.visibility = View.VISIBLE
-                        resource.data?.let { forecast -> retrieveList(forecast.list) }
+                        binding.cvGradient.visibility = View.VISIBLE
+                        binding.animationLoading.visibility = View.GONE
+                        resource.data?.let { forecast -> retrieveList(forecast.forecast.forecastday) }
+
+                        val maxTemp = "${resource.data?.forecast?.forecastday?.component2()?.day?.maxtempC?.toInt()}"
+                        val minTemp = "/ ${resource.data?.forecast?.forecastday?.component2()?.day?.mintempC?.toInt()}°"
+                        val description = "${resource.data?.forecast?.forecastday?.component2()?.day?.condition?.text}"
+                        val humidity = "${resource.data?.forecast?.forecastday?.component2()?.day?.avghumidity}%"
+                        val windSpeed = "${resource.data?.forecast?.forecastday?.component2()?.day?.maxwindKph?.toInt()} km/h"
+                        val chanceRain = "${resource.data?.forecast?.forecastday?.component2()?.day?.dailyChanceOfRain}%"
+
+                        binding.tvMaxTemp.text = maxTemp
+                        binding.tvMinTemp.text = minTemp
+                        binding.tvWeatherWeek.text = description
+                        binding.tvWindSpeed.text = windSpeed
+                        binding.tvHumidityPercent.text = humidity
+                        binding.tvChancePercent.text = chanceRain
+
+                        val codeWeather = resource.data?.forecast?.forecastday?.component2()?.day?.condition?.code
+                        val animationWeather = binding.animationWeather
+
+                        when (codeWeather) {
+                            1000 -> { animationWeather.setAnimation(R.raw.ic_sunny) }
+                            1003, 1006 -> { animationWeather.setAnimation(R.raw.ic_partly_cloudy) }
+                            1009, 1030 -> { animationWeather.setAnimation(R.raw.ic_mist) }
+                            1066, 1069, 1072, 1210, 1213, 1216 -> { animationWeather.setAnimation(R.raw.ic_snow_sunny) }
+                            1114, 1117, 1219, 1222, 1225, 1237, 1255, 1258, 1261, 1264
+                            -> { animationWeather.setAnimation(R.raw.ic_snow) }
+                            1135, 1147 -> { animationWeather.setAnimation(R.raw.ic_windy) }
+                            1063, 1150, 1153, 1168, 1171, 1180, 1183, 1186, 1189,
+                            1192, 1195, 1198, 1201, 1204, 1207, 1240, 1243, 1246,
+                            1249, 1252 -> { animationWeather.setAnimation(R.raw.ic_partly_shower) }
+                            1273, 1276, 1279, 1282 -> { animationWeather.setAnimation(R.raw.ic_storm_showersday) }
+                        }
+                        animationWeather.playAnimation()
                     }
                     Status.ERROR -> {
                         binding.rvWeather.visibility = View.VISIBLE
+                        binding.cvGradient.visibility = View.VISIBLE
+                        binding.animationLoading.visibility = View.GONE
                         Toast.makeText(this.context, it.message, Toast.LENGTH_LONG).show()
                     }
                     Status.LOADING -> {
                         binding.rvWeather.visibility = View.GONE
+                        binding.cvGradient.visibility = View.GONE
+                        binding.animationLoading.visibility = View.VISIBLE
                     }
                 }
             }
         })
     }
 
-    private fun retrieveList(forecast: List<WeatherData>) {
+    private fun retrieveList(forecast: List<Forecastday>) {
         adapter.apply {
             this.items = forecast
         }

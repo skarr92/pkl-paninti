@@ -7,6 +7,18 @@
     android:layout_height="match_parent"
     android:background="@color/blue_black">
 
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationLoading"
+        android:layout_width="@dimen/cloud_height"
+        android:layout_height="@dimen/cloud_height"
+        android:elevation="@dimen/custom_margin_10dp"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        android:layout_gravity="center"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/ic_loading" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -30,8 +42,8 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imgBack"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/color_product_select_variant"
+                        android:layout_height="@dimen/color_product_select_variant"
                         android:layout_marginStart="@dimen/screen_margin"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_back"
@@ -40,88 +52,112 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imgMenuVertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/color_product_select_variant"
+                        android:layout_height="@dimen/color_product_select_variant"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:layout_marginEnd="@dimen/screen_margin"
-                        android:src="@drawable/img_menu_vertical"
+                        android:src="@drawable/ic_menu_vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/tvWeeks"
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/shapeableImageView2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/normal_margin"
-                        android:drawableStart="@drawable/ic_calendar"
+                        android:src="@drawable/ic_calendar"
+                        app:layout_constraintEnd_toStartOf="@+id/tvWeeks"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imgBack" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWeeks"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/normal_margin"
+                        android:layout_marginTop="@dimen/normal_margin"
                         android:text="@string/seven_days"
                         android:textAppearance="@style/TextAppearance.Title"
                         android:textColor="@color/white"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/shapeableImageView2"
                         app:layout_constraintTop_toBottomOf="@id/imgMenuVertical" />
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgCloudy"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animationWeather"
+                        android:layout_width="@dimen/cloud_height2"
+                        android:layout_height="@dimen/cloud_height2"
+                        android:layout_marginStart="@dimen/huge_margin"
                         android:layout_marginTop="@dimen/large_margin"
-                        android:src="@drawable/img_cloudy"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.22"
+                        android:elevation="@dimen/custom_margin_10dp"
+                        android:scaleType="fitCenter"
+                        android:visibility="visible"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvWeeks" />
+                        app:layout_constraintTop_toBottomOf="@id/tvWeeks"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/ic_rainy_night" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvTomorrow"
-                        android:layout_width="wrap_content"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/large_margin"
                         android:text="@string/tomorrow"
                         android:textAppearance="@style/TextAppearance.Body"
                         android:textColor="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/tvMaxTemp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.65"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvWeeks" />
+                        app:layout_constraintHorizontal_bias="0.4"
+                        app:layout_constraintStart_toEndOf="@+id/animationWeather"
+                        app:layout_constraintTop_toBottomOf="@+id/tvWeeks"
+                        app:layout_constraintVertical_chainStyle="packed" />
 
-                    <TextView
-                        android:id="@+id/tvCelcius24"
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvMaxTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/cel_24"
                         android:textAppearance="@style/TextAppearance.Weather.Title2"
                         android:textColor="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/tvWeatherWeek"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.65"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvTomorrow" />
+                        app:layout_constraintEnd_toStartOf="@+id/tvMinTemp"
+                        app:layout_constraintHorizontal_bias="0.4"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toEndOf="@+id/animationWeather"
+                        app:layout_constraintTop_toBottomOf="@+id/tvTomorrow" />
 
-                    <TextView
-                        android:id="@+id/tvCelcius17"
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvMinTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/small_margin"
                         android:layout_marginTop="@dimen/semi_huge_margin"
+                        android:layout_marginStart="@dimen/small_margin"
                         android:text="@string/per_17"
                         android:textAppearance="@style/TextAppearance.Weather.Title3"
                         android:textColor="@color/white"
-                        app:layout_constraintHorizontal_bias="0.66"
-                        app:layout_constraintStart_toEndOf="@id/tvCelcius24"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/tvMaxTemp"
                         app:layout_constraintTop_toBottomOf="@id/tvTomorrow" />
 
-                    <TextView
-                        android:id="@+id/tvCloudy"
-                        android:layout_width="wrap_content"
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvWeatherWeek"
+                        android:layout_width="150dp"
                         android:layout_height="wrap_content"
                         android:text="@string/cloudy"
                         android:textAppearance="@style/TextAppearance.Weather.Body"
                         android:textColor="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/viewLine"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.61"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvCelcius24" />
+                        app:layout_constraintHorizontal_bias="0.4"
+                        app:layout_constraintStart_toEndOf="@+id/animationWeather"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMaxTemp" />
 
                     <View
                         android:id="@+id/viewLine"
@@ -133,14 +169,24 @@
                         android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgCloudy" />
+                        app:layout_constraintTop_toBottomOf="@+id/tvWeatherWeek" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivWind"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/icon_height"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:src="@drawable/ic_wind"
+                        app:layout_constraintEnd_toStartOf="@+id/ivHumidity"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWindSpeed"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:drawableTop="@drawable/ic_wind"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/wind_speed"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Caption1"
@@ -148,9 +194,9 @@
                         app:layout_constraintEnd_toStartOf="@+id/tvHumidityPercent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+                        app:layout_constraintTop_toBottomOf="@id/ivWind" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWind"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -166,12 +212,22 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvWindSpeed" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivHumidity"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/icon_height"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:src="@drawable/ic_humidity"
+                        app:layout_constraintEnd_toStartOf="@+id/ivChanceRain"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/ivWind"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvHumidityPercent"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:drawableTop="@drawable/ic_humidity"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:gravity="center_horizontal"
                         android:text="@string/humidity_percent"
                         android:textAppearance="@style/TextAppearance.Caption1"
@@ -179,9 +235,9 @@
                         app:layout_constraintEnd_toStartOf="@+id/tvChancePercent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/tvWindSpeed"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+                        app:layout_constraintTop_toBottomOf="@id/ivHumidity" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvHumidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -197,12 +253,22 @@
                         app:layout_constraintStart_toEndOf="@+id/tvWind"
                         app:layout_constraintTop_toBottomOf="@id/tvHumidityPercent" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivChanceRain"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/icon_height"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:src="@drawable/ic_moisture"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/ivHumidity"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvChancePercent"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:drawableTop="@drawable/ic_moisture"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/chance_percent"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Caption1"
@@ -210,9 +276,9 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/tvHumidityPercent"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+                        app:layout_constraintTop_toBottomOf="@id/ivChanceRain" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvChanceOfRain"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"

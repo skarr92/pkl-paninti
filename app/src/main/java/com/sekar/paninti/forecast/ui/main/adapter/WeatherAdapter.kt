@@ -5,55 +5,52 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.sekar.paninti.R
 import com.sekar.paninti.databinding.ItemWeatherDayBinding
 import com.sekar.paninti.databinding.ItemWeatherWeekBinding
-import com.sekar.paninti.forecast.data.model.WeatherData
+import com.sekar.paninti.forecast.data.model.Forecastday
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 
 class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
 
     private val limit = 7
 
     class WeatherHolder(private val binding: ItemWeatherWeekBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(weather: WeatherData) {
+        fun bind(item: Forecastday) {
             binding.apply {
-                val day = "Monday"
-                val main = "${weather.weather.component1().main}"
-                val temp = "${weather.main.temp.toInt()}°"
+                val condition = "${item.day.condition.text}"
+                val temp = "${item.day.avgtempC.toInt()}°"
+                val day = item.date
+                val df: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+                val dateFormat: DateFormat = SimpleDateFormat("EEEE")
+                val newDay: String = dateFormat.format(df.parse(day))
+                val iconWeather = "https:${item.day.condition.icon}"
 
-                if(main == "Clouds") {
-                    ivWeather.setImageResource(R.drawable.ic_cloud)
-                    tvWeather.text = "Cloudy"
-                } else if (main == "Rain") {
-                    ivWeather.setImageResource(R.drawable.ic_rain)
-                    tvWeather.text = "Rainy"
-                } else if (main == "Clear") {
-                    ivWeather.setImageResource(R.drawable.ic_sun)
-                    tvWeather.text = "Sunny"
-                } else {
-                    ivWeather.setImageResource(R.drawable.ic_cloud)
-                    tvWeather.text = "Cloudy"
-                }
-
-                tvDay.text = day
+                tvDay.text = newDay
+                tvWeather.text = condition
                 tvCel.text = temp
+                Glide.with(ivWeather.context)
+                    .load(iconWeather)
+                    .into(ivWeather)
             }
         }
     }
 
-    private val differCallback = object : DiffUtil.ItemCallback<WeatherData>() {
-        override fun areItemsTheSame(oldItem: WeatherData, newItem: WeatherData): Boolean {
-            return oldItem.dtTxt.substring(0, 10) == newItem.dtTxt.substring(0, 10)
+    private val differCallback = object : DiffUtil.ItemCallback<Forecastday>() {
+        override fun areItemsTheSame(oldItem: Forecastday, newItem: Forecastday): Boolean {
+            return oldItem.date == newItem.date
         }
 
-        override fun areContentsTheSame(oldItem: WeatherData, newItem: WeatherData): Boolean {
+        override fun areContentsTheSame(oldItem: Forecastday, newItem: Forecastday): Boolean {
             return oldItem == newItem
         }
     }
 
     val differ = AsyncListDiffer(this, differCallback)
 
-    var items : List<WeatherData>
+    var items : List<Forecastday>
         get() = differ.currentList
         set(value) = differ.submitList(value)
 

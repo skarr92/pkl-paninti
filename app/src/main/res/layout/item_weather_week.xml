@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.28" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/secondGuideline"
@@ -21,7 +21,7 @@
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvDay"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/day_width"
         android:layout_height="wrap_content"
         android:text="@string/monday"
         android:textAppearance="@style/TextAppearance.Weather.Body2"
@@ -36,7 +36,7 @@
         android:id="@+id/ivWeather"
         android:layout_width="@dimen/icon_height"
         android:layout_height="@dimen/icon_height"
-        android:layout_marginStart="@dimen/semi_huge_margin"
+        android:layout_marginStart="@dimen/screen_margin"
         android:src="@drawable/ic_cloud"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/firstGuideline"

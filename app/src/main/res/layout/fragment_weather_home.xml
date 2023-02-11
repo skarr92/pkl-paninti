@@ -16,6 +16,21 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/animationLoading"
+                android:layout_width="@dimen/cloud_height"
+                android:layout_height="@dimen/cloud_height"
+                android:elevation="@dimen/custom_margin_10dp"
+                android:scaleType="fitCenter"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/ic_loading" />
+
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvGradient"
                 android:layout_width="match_parent"
@@ -29,52 +44,69 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvCel"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="@dimen/color_product_select_variant"
                         android:layout_marginStart="@dimen/screen_margin"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:text="@string/celcius"
-                        android:textAppearance="@style/TextAppearance.Title1"
+                        android:textAppearance="@style/TextAppearance.Weather.Title"
                         android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imgMenuVertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="@dimen/color_product_select_variant"
+                        android:layout_height="@dimen/color_product_select_variant"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:layout_marginEnd="@dimen/screen_margin"
-                        android:src="@drawable/img_menu_vertical"
+                        android:src="@drawable/ic_menu_vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/icPin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="@dimen/normal_margin"
+                        android:src="@drawable/ic_pin"
+                        app:layout_constraintEnd_toStartOf="@+id/tvLocation"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintHorizontal_chainStyle="packed"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCel" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvLocation"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/small_margin"
-                        android:drawableStart="@drawable/ic_pin"
+                        android:layout_marginStart="@dimen/normal_margin"
+                        android:layout_marginTop="@dimen/normal_margin"
                         android:text="@string/location"
                         android:textAppearance="@style/TextAppearance.Subtitle1"
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/icPin"
                         app:layout_constraintTop_toBottomOf="@id/imgMenuVertical" />
 
-                    <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgCloudy"
-                        android:layout_width="@dimen/cloud_width_height"
-                        android:layout_height="@dimen/cloud_width_height"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:src="@drawable/img_cloudy"
+                    <com.airbnb.lottie.LottieAnimationView
+                        android:id="@+id/animationWeather"
+                        android:layout_width="@dimen/cloud_height"
+                        android:layout_height="@dimen/cloud_height"
+                        android:elevation="@dimen/custom_margin_10dp"
+                        android:scaleType="fitCenter"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/tvLocation" />
+                        app:layout_constraintTop_toBottomOf="@id/tvLocation"
+                        app:lottie_autoPlay="true"
+                        app:lottie_loop="true"
+                        app:lottie_rawRes="@raw/ic_rainy_night" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvCelcius"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -83,23 +115,26 @@
                         android:textColor="@color/white"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/imgCloudy" />
+                        app:layout_constraintTop_toBottomOf="@id/animationWeather" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWeather"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/large_margin"
                         android:text="@string/cloudy"
+                        android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Weather.Title"
                         android:textColor="@color/yellow"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvCelcius" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/normal_margin"
                         android:text="@string/date"
                         android:textAppearance="@style/TextAppearance.Body2"
                         android:textColor="@color/white"
@@ -119,12 +154,22 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivWind"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/icon_height"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:src="@drawable/ic_wind"
+                        app:layout_constraintEnd_toStartOf="@+id/ivHumidity"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWindSpeed"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:drawableTop="@drawable/ic_wind"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/wind_speed"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Caption1"
@@ -132,9 +177,9 @@
                         app:layout_constraintEnd_toStartOf="@+id/tvHumidityPercent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+                        app:layout_constraintTop_toBottomOf="@id/ivWind" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWind"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -150,12 +195,22 @@
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/tvWindSpeed" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivHumidity"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/icon_height"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:src="@drawable/ic_humidity"
+                        app:layout_constraintEnd_toStartOf="@+id/ivChanceRain"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/ivWind"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvHumidityPercent"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:drawableTop="@drawable/ic_humidity"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:gravity="center_horizontal"
                         android:text="@string/humidity_percent"
                         android:textAppearance="@style/TextAppearance.Caption1"
@@ -163,9 +218,9 @@
                         app:layout_constraintEnd_toStartOf="@+id/tvChancePercent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/tvWindSpeed"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+                        app:layout_constraintTop_toBottomOf="@id/ivHumidity" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvHumidity"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -181,12 +236,22 @@
                         app:layout_constraintStart_toEndOf="@+id/tvWind"
                         app:layout_constraintTop_toBottomOf="@id/tvHumidityPercent" />
 
-                    <TextView
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivChanceRain"
+                        android:layout_width="50dp"
+                        android:layout_height="@dimen/icon_height"
+                        android:layout_marginTop="@dimen/screen_margin"
+                        android:src="@drawable/ic_moisture"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/ivHumidity"
+                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvChancePercent"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/screen_margin"
-                        android:drawableTop="@drawable/ic_moisture"
+                        android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/chance_percent"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.Caption1"
@@ -194,9 +259,9 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/tvHumidityPercent"
-                        app:layout_constraintTop_toBottomOf="@id/viewLine" />
+                        app:layout_constraintTop_toBottomOf="@id/ivChanceRain" />
 
-                    <TextView
+                    <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvChanceOfRain"
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
@@ -214,7 +279,7 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvToday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -227,14 +292,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvGradient" />
 
-            <TextView
+            <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tvNextSevenDays"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
                 android:text="@string/next_seven_days"
-                android:textAppearance="@style/TextAppearance.Body2"
+                android:textAppearance="@style/TextAppearance.Body"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvGradient"
@@ -245,7 +310,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/zero_dp"
                 app:flow_horizontalAlign="center"
-                android:layout_margin="@dimen/small_margin"
+                android:layout_marginHorizontal="@dimen/normal_margin"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
