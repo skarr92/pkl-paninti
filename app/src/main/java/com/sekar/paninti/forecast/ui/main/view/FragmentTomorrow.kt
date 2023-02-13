@@ -55,6 +55,14 @@ class FragmentTomorrow : Fragment() {
         binding.cvGradient.setBackgroundResource(R.drawable.bg_weather_gradient)
     }
 
+    private fun backOnClick(){
+        binding.imgBack.setOnClickListener{
+            val fragment = FragmentWeatherHome()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.containerWeather,fragment)?.commit()
+        }
+    }
+
     private fun setupViewModel() {
         viewModel = ViewModelProvider(
             this,
@@ -110,6 +118,7 @@ class FragmentTomorrow : Fragment() {
                         }
                         animationWeather.playAnimation()
                     }
+
                     Status.ERROR -> {
                         binding.rvWeather.visibility = View.VISIBLE
                         binding.cvGradient.visibility = View.VISIBLE
@@ -129,13 +138,6 @@ class FragmentTomorrow : Fragment() {
     private fun retrieveList(forecast: List<Forecastday>) {
         adapter.apply {
             this.items = forecast
-        }
-    }
-    private fun backOnClick(){
-        binding.imgBack.setOnClickListener{
-            val fragment = FragmentWeatherHome()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerWeather,fragment)?.commit()
         }
     }
 }

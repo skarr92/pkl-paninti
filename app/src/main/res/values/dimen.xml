@@ -65,7 +65,7 @@
 
     <dimen name="cloud_height">180dp</dimen>
     <dimen name="cloud_height2">120dp</dimen>
-    <dimen name="day_width">72dp</dimen>
+    <dimen name="day_width">96dp</dimen>
 
     <!-- Elevation -->
     <dimen name="toolbar_elevation">8dp</dimen>

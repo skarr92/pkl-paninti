@@ -96,6 +96,7 @@
                         android:id="@+id/animationWeather"
                         android:layout_width="@dimen/cloud_height"
                         android:layout_height="@dimen/cloud_height"
+                        android:layout_marginTop="@dimen/normal_margin"
                         android:elevation="@dimen/custom_margin_10dp"
                         android:scaleType="fitCenter"
                         android:visibility="visible"

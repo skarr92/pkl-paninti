@@ -96,14 +96,17 @@ class FragmentWeatherHome : Fragment() {
                         binding.tvHumidityPercent.text = humidityPercent
                         binding.tvChancePercent.text = chanceRain
 
-                        val time = resource.data?.current?.lastUpdated?.substring(11, 16)
-                        val tf : DateFormat = SimpleDateFormat("HH:mm")
-                        val timeFormat : DateFormat = SimpleDateFormat("a")
-                        val timeMarker : String = timeFormat.format(tf.parse(time))
                         val codeWeather = resource.data?.current?.condition?.code
                         val animationWeather = binding.animationWeather
+                        val time = resource.data?.current?.lastUpdated?.substring(11, 13)?.toInt()
+                        var timeCondition = ""
 
-                        if (timeMarker == "AM"){
+                        when (time){
+                            in 6..18-> timeCondition = "Day"
+                            in 19..23, in 0..5 -> timeCondition = "Night"
+                        }
+
+                        if (timeCondition == "Day"){
                             when (codeWeather) {
                                 1000 -> {animationWeather.setAnimation(R.raw.ic_sunny)}
                                 1003, 1006 -> {animationWeather.setAnimation(R.raw.ic_partly_cloudy)}
@@ -118,7 +121,7 @@ class FragmentWeatherHome : Fragment() {
                                 1273, 1276, 1279, 1282 -> {animationWeather.setAnimation(R.raw.ic_storm_showersday)}
                             }
                             animationWeather.playAnimation()
-                        } else if (timeMarker == "PM"){
+                        } else if (timeCondition == "Night"){
                             when (codeWeather) {
                                 1000 -> {animationWeather.setAnimation(R.raw.ic_night)}
                                 1003, 1006 -> {animationWeather.setAnimation(R.raw.ic_cloudy_night)}
