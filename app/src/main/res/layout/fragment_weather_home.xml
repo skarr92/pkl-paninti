@@ -23,10 +23,10 @@
                 android:elevation="@dimen/custom_margin_10dp"
                 android:scaleType="fitCenter"
                 android:visibility="visible"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 app:lottie_autoPlay="true"
                 app:lottie_loop="true"
                 app:lottie_rawRes="@raw/ic_loading" />
@@ -69,7 +69,7 @@
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/icPin"
                         android:layout_width="wrap_content"
-                        android:layout_height="25dp"
+                        android:layout_height="@dimen/icon_height"
                         android:layout_marginTop="@dimen/normal_margin"
                         android:src="@drawable/ic_pin"
                         app:layout_constraintEnd_toStartOf="@+id/tvLocation"
@@ -157,7 +157,7 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/ivWind"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="@dimen/icon_height"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_wind"
@@ -168,7 +168,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWindSpeed"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/wind_speed"
@@ -182,7 +182,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvWind"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/extra_small_margin"
                         android:layout_marginBottom="@dimen/screen_margin"
@@ -198,7 +198,7 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/ivHumidity"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="@dimen/icon_height"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_humidity"
@@ -209,7 +209,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvHumidityPercent"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/small_margin"
                         android:gravity="center_horizontal"
@@ -223,7 +223,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvHumidity"
-                        android:layout_width="wrap_content"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/extra_small_margin"
                         android:layout_marginBottom="@dimen/screen_margin"
@@ -239,7 +239,7 @@
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/ivChanceRain"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="@dimen/icon_height"
                         android:layout_marginTop="@dimen/screen_margin"
                         android:src="@drawable/ic_moisture"
@@ -250,7 +250,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvChancePercent"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/small_margin"
                         android:text="@string/chance_percent"
@@ -264,7 +264,7 @@
 
                     <com.google.android.material.textview.MaterialTextView
                         android:id="@+id/tvChanceOfRain"
-                        android:layout_width="50dp"
+                        android:layout_width="@dimen/custom_width_50dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/extra_small_margin"
                         android:layout_marginBottom="@dimen/screen_margin"
@@ -284,12 +284,12 @@
                 android:id="@+id/tvToday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/screen_margin"
                 android:layout_marginStart="@dimen/screen_margin"
+                android:layout_marginTop="@dimen/screen_margin"
                 android:text="@string/today"
                 android:textAppearance="@style/TextAppearance.Title"
-                android:textStyle="bold"
                 android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cvGradient" />
 
@@ -299,19 +299,19 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/screen_margin"
                 android:layout_marginEnd="@dimen/screen_margin"
+                android:drawableEnd="@drawable/ic_forward"
                 android:text="@string/next_seven_days"
                 android:textAppearance="@style/TextAppearance.Body"
                 android:textColor="@color/white"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/cvGradient"
-                android:drawableEnd="@drawable/ic_forward"/>
+                app:layout_constraintTop_toBottomOf="@id/cvGradient" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvWeatherDay"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/zero_dp"
-                app:flow_horizontalAlign="center"
                 android:layout_marginHorizontal="@dimen/normal_margin"
+                app:flow_horizontalAlign="center"
                 android:orientation="horizontal"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -319,6 +319,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvToday"
                 tools:listitem="@layout/item_weather_day" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/groupHome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:constraint_referenced_ids="tvToday,tvNextSevenDays,rvWeatherDay" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

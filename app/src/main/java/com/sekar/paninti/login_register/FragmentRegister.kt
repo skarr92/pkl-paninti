@@ -21,7 +21,6 @@ class FragmentRegister : Fragment() {
     private var isNullEmail = false
     private var isNullPassword = false
     private var isNullConfirmPassword = false
-
     val minTwoCharRegex = "^.{2,}$"
     val minSixCharRegex = "^.{6,}$"
     val passwordRegex ="^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{6,}$"
@@ -32,7 +31,6 @@ class FragmentRegister : Fragment() {
     var validEmail = false
     var validPassword = false
     var validConfirmPassword = false
-
 
     private lateinit var binding: FragmentRegisterBinding
 

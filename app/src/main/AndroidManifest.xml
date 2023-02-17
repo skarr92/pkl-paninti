@@ -17,7 +17,7 @@
         android:theme="@style/Theme.Paninti"
         tools:targetApi="31">
         <activity
-            android:name=".login_register.LoginRegister"
+            android:name=".forecast.ui.main.view.Weather"
             android:screenOrientation="nosensor"
             android:exported="false">
             <meta-data
@@ -25,7 +25,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".forecast.ui.main.view.Weather"
+            android:name=".login_register.LoginRegister"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

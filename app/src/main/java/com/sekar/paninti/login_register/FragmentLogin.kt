@@ -21,7 +21,6 @@ class FragmentLogin : Fragment() {
 
     private var isNullEmailOrUsername = false
     private var isNullPassword = false
-
     var validEmailOrUsername = false
     var validPassword = false
 

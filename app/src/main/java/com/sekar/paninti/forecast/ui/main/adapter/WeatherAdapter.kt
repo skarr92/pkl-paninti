@@ -6,16 +6,12 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.sekar.paninti.R
-import com.sekar.paninti.databinding.ItemWeatherDayBinding
 import com.sekar.paninti.databinding.ItemWeatherWeekBinding
 import com.sekar.paninti.forecast.data.model.Forecastday
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
 class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
-
-    private val limit = 7
 
     class WeatherHolder(private val binding: ItemWeatherWeekBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: Forecastday) {
@@ -27,7 +23,6 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
                 val dateFormat: DateFormat = SimpleDateFormat("EEEE")
                 val newDay: String = dateFormat.format(df.parse(day))
                 val iconWeather = "https:${item.day.condition.icon}"
-
                 tvDay.text = newDay
                 tvWeather.text = condition
                 tvCel.text = temp
@@ -39,13 +34,15 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
     }
 
     private val differCallback = object : DiffUtil.ItemCallback<Forecastday>() {
-        override fun areItemsTheSame(oldItem: Forecastday, newItem: Forecastday): Boolean {
-            return oldItem.date == newItem.date
-        }
+        override fun areItemsTheSame(
+            oldItem: Forecastday,
+            newItem: Forecastday
+        ): Boolean = oldItem.date == newItem.date
 
-        override fun areContentsTheSame(oldItem: Forecastday, newItem: Forecastday): Boolean {
-            return oldItem == newItem
-        }
+        override fun areContentsTheSame(
+            oldItem: Forecastday,
+            newItem: Forecastday
+        ): Boolean = oldItem == newItem
     }
 
     val differ = AsyncListDiffer(this, differCallback)
@@ -66,7 +63,5 @@ class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
         holder.bind(items[position])
         holder.setIsRecyclable(true)
     }
-    override fun getItemCount(): Int {
-        return if (items.size > limit) limit else items.size
-    }
+    override fun getItemCount() = items.size
  }

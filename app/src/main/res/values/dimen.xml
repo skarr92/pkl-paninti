@@ -63,10 +63,6 @@
     <dimen name="close_icon_size">26dp</dimen>
     <dimen name="button_height">40dp</dimen>
 
-    <dimen name="cloud_height">180dp</dimen>
-    <dimen name="cloud_height2">120dp</dimen>
-    <dimen name="day_width">96dp</dimen>
-
     <!-- Elevation -->
     <dimen name="toolbar_elevation">8dp</dimen>
     <dimen name="card_elevation">6dp</dimen>
@@ -91,4 +87,11 @@
     <dimen name="caption_2_line_height">16sp</dimen>
     <dimen name="overline_line_height">14sp</dimen>
     <dimen name="small_line_height">13sp</dimen>
+
+    <!-- Forecast App Dimens-->
+    <dimen name="cloud_height">180dp</dimen>
+    <dimen name="cloud_height2">120dp</dimen>
+    <dimen name="custom_width_50dp">50dp</dimen>
+    <dimen name="custom_width_150dp">150dp</dimen>
+    <dimen name="day_width">96dp</dimen>
 </resources>

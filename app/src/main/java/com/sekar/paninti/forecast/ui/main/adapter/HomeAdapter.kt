@@ -6,15 +6,10 @@ import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.sekar.paninti.R
 import com.sekar.paninti.databinding.ItemWeatherDayBinding
-import com.sekar.paninti.forecast.data.model.Current
 import com.sekar.paninti.forecast.data.model.Hour
-import com.sekar.paninti.forecast.ui.main.view.FragmentWeatherHome
 
 class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
-
-    private val limit = 4
 
     class HomeHolder(private val binding: ItemWeatherDayBinding) : RecyclerView.ViewHolder(binding.root) {
 
@@ -23,8 +18,6 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
                 val humidity = "${item.humidity}%"
                 val hour = "${item.time.substring(11, 16)}"
                 val iconWeather = "https:${item.condition.icon}"
-
-
                 tvHmdty.text = humidity
                 tvHour.text = hour
                 Glide.with(ivWeatherDay.context)
@@ -34,19 +27,20 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
         }
     }
 
-    private val differCallback = object : DiffUtil.ItemCallback<Hour>() {
-        override fun areItemsTheSame(oldItem: Hour, newItem: Hour): Boolean {
-            return oldItem.time == newItem.time
-        }
+    val differCallback = object : DiffUtil.ItemCallback<Hour>() {
+        override fun areItemsTheSame(
+            oldItem: Hour,
+            newItem: Hour
+        ) = oldItem.time == newItem.time
 
-        override fun areContentsTheSame(oldItem: Hour, newItem: Hour): Boolean {
-            return oldItem == newItem
-        }
+        override fun areContentsTheSame(
+            oldItem: Hour,
+            newItem: Hour
+        ) = oldItem == newItem
     }
 
     val differ = AsyncListDiffer(this, differCallback)
-
-    var items : List<Hour>
+    var items: List<Hour>
         get() = differ.currentList
         set(value) = differ.submitList(value)
 
@@ -62,8 +56,6 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
         holder.bind(items[position])
         holder.setIsRecyclable(true)
     }
-    override fun getItemCount(): Int {
-        return items.size
-//        return if (items.size > limit) limit else items.size
-    }
+
+    override fun getItemCount() = items.size
 }

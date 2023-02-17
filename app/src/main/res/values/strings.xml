@@ -18,7 +18,7 @@
     <string name="male">Laki-laki</string>
     <string name="female">Perempuan</string>
 
-    <!-- Validasi form login & register -->
+    <!-- Validasi Form Login & Register -->
     <string name="null_full_name">Nama lengkap wajib diisi</string>
     <string name="null_username">Username wajib diisi</string>
     <string name="null_email">Email wajib diisi</string>
@@ -34,17 +34,12 @@
     <string name="valid_password">Password minimal berisi 1 huruf kapital dan 1 angka</string>
     <string name="valid_confirm_password">Konfirmasi password tidak sesuai</string>
 
+    <!-- Forecast App -->
     <string name="seven_days">7 Days</string>
     <string name="next_seven_days">7 days</string>
     <string name="today">Today</string>
     <string name="tomorrow">Tomorrow</string>
     <string name="monday">Monday</string>
-    <string name="tuesday">Tuesday</string>
-    <string name="wednesday">Wednesday</string>
-    <string name="thursday">Thursday</string>
-    <string name="friday">Friday</string>
-    <string name="saturday">Saturday</string>
-    <string name="sunday">Sunday</string>
     <string name="per_17">/ 17°</string>
     <string name="cel_24">24</string>
     <string name="celcius_29">29°</string>
@@ -59,5 +54,4 @@
     <string name="chance_percent">82%</string>
     <string name="chance_of_rain">Chance of rain</string>
     <string name="clock_10">10:00</string>
-
 </resources>

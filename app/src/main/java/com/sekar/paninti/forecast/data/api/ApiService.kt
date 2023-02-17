@@ -1,13 +1,13 @@
 package com.sekar.paninti.forecast.data.api
 
 import com.sekar.paninti.forecast.data.model.Weather
+import com.sekar.paninti.forecast.utils.EndPoint
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("v1/forecast.json")
-
+    @GET(EndPoint.WEATHER_PATH)
     suspend fun getForecast(
         @Query("key") apiKey : String,
         @Query("q") cityName : String,
