@@ -49,6 +49,14 @@ class FragmentWeatherHome : Fragment() {
         binding.cvGradient.setBackgroundResource(R.drawable.bg_weather_gradient)
     }
 
+    private fun nextSevenDay(){
+        binding.tvNextSevenDays.setOnClickListener{
+            val fragment = FragmentTomorrow()
+            val transaction = fragmentManager?.beginTransaction()
+            transaction?.replace(R.id.containerWeather,fragment)?.commit()
+        }
+    }
+
     private fun setupViewModel() {
         viewModel = ViewModelProvider(
             this,
@@ -64,20 +72,16 @@ class FragmentWeatherHome : Fragment() {
     private fun setupObservers() {
         viewModel.getForecast().observe(viewLifecycleOwner, Observer {
             it?.let { resource ->
-                showLoading(resource.status == SUCCESS || resource.status == ERROR)
                 showLoading(resource.status == LOADING)
                 when (resource.status) {
                     SUCCESS -> {
                         resource.data?.let { forecast -> adapter.items = forecast.forecast.forecastday.component1().hour }
+
                         resource.data?.current.let { weather ->
                             val temp = "${weather?.tempC?.toInt()}°"
                             val condition = weather?.condition?.text
                             val windSpeed = "${weather?.windKph?.toInt()} km/h"
                             val humidityPercent = "${weather?.humidity}%"
-                            val codeWeather = weather?.condition?.code
-                            val time = weather?.lastUpdated?.substring(11, 13)?.toInt()
-                            val animationWeather = binding.animationWeather
-                            var timeCondition = ""
 
                             binding.apply {
                                 tvWindSpeed.text = windSpeed
@@ -86,11 +90,16 @@ class FragmentWeatherHome : Fragment() {
                                 tvWeather.text = condition
                             }
 
+                            val codeWeather = weather?.condition?.code
+                            val time = weather?.lastUpdated?.substring(11, 13)?.toInt()
+                            var timeCondition = ""
+
                             when (time){
                                 in 6..18-> timeCondition = "Day"
                                 in 19..23, in 0..5 -> timeCondition = "Night"
                             }
 
+                            val animationWeather = binding.animationWeather
                             if (timeCondition == "Day"){
                                 when (codeWeather) {
                                     1000 -> {animationWeather.setAnimation(R.raw.ic_sunny)}
@@ -124,16 +133,20 @@ class FragmentWeatherHome : Fragment() {
                             }
                         }
 
-                        val location = resource.data?.location?.name
-                        val chanceRain = "${resource.data?.forecast?.forecastday?.component1()?.day?.dailyChanceOfRain}%"
-                        val date = resource.data?.forecast?.forecastday?.component1()?.date
-                        val df: DateFormat = SimpleDateFormat("yyyy-MM-dd")
-                        val dateFormat: DateFormat = SimpleDateFormat("EEEE, dd MMMM")
-                        val newDate: String = dateFormat.format(df.parse(date))
-                        binding.apply {
-                            tvLocation.text = location
-                            tvDate.text = newDate
-                            tvChancePercent.text = chanceRain
+                        resource.data?.location?.let { location -> binding.tvLocation.text = location.name }
+
+                        resource.data?.forecast?.forecastday?.component1()?.let { forecastday ->
+                            val chanceRain = "${forecastday.day.dailyChanceOfRain}%"
+                            val date = forecastday.date
+
+                            val df: DateFormat = SimpleDateFormat("yyyy-MM-dd")
+                            val dateFormat: DateFormat = SimpleDateFormat("EEEE, dd MMMM")
+                            val newDate: String = dateFormat.format(df.parse(date))
+
+                            binding.apply {
+                                tvDate.text = newDate
+                                tvChancePercent.text = chanceRain
+                            }
                         }
                     }
                     ERROR -> {
@@ -150,14 +163,6 @@ class FragmentWeatherHome : Fragment() {
             animationLoading.isVisible = loading
             groupHome.isVisible = !loading
             cvGradient.isVisible = !loading
-        }
-    }
-
-    private fun nextSevenDay(){
-        binding.tvNextSevenDays.setOnClickListener{
-            val fragment = FragmentTomorrow()
-            val transaction = fragmentManager?.beginTransaction()
-            transaction?.replace(R.id.containerWeather,fragment)?.commit()
         }
     }
 }

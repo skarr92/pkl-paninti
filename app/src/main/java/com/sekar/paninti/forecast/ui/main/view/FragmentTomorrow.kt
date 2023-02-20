@@ -69,9 +69,7 @@ class FragmentTomorrow : Fragment() {
     private fun setupObservers() {
         viewModel.getForecast().observe(viewLifecycleOwner, Observer {
             it?.let { resource ->
-                showLoading(resource.status == SUCCESS || resource.status == ERROR)
                 showLoading(resource.status == LOADING)
-
                 when (resource.status) {
                     SUCCESS -> {
                         showLoading(false)
@@ -83,8 +81,6 @@ class FragmentTomorrow : Fragment() {
                             val humidity = "${weather?.avghumidity}%"
                             val windSpeed = "${weather?.maxwindKph?.toInt()} km/h"
                             val chanceRain = "${weather?.dailyChanceOfRain}%"
-                            val animationWeather = binding.animationWeather
-                            val codeWeather = weather?.condition?.code
 
                             binding.apply {
                                 tvMaxTemp.text = maxTemp
@@ -95,6 +91,8 @@ class FragmentTomorrow : Fragment() {
                                 tvChancePercent.text = chanceRain
                             }
 
+                            val animationWeather = binding.animationWeather
+                            val codeWeather = weather?.condition?.code
                             when (codeWeather) {
                                 1000 -> { animationWeather.setAnimation(R.raw.ic_sunny) }
                                 1003, 1006 -> { animationWeather.setAnimation(R.raw.ic_partly_cloudy) }
