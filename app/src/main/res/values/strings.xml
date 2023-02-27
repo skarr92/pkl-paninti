@@ -44,6 +44,11 @@
     <string name="cel_24">24</string>
     <string name="celcius_29">29°</string>
     <string name="celcius">°C</string>
+    <string name="fahrenheit">°F</string>
+    <string name="kelvin">°K</string>
+    <string name="menu_celcius">°Celcius</string>
+    <string name="menu_fahrenheit">°Fahrenheit</string>
+    <string name="menu_kelvin">Kelvin</string>
     <string name="date">Monday, 17 May</string>
     <string name="location">Minsk</string>
     <string name="cloudy">Cloudy</string>

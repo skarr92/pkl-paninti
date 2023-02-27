@@ -27,7 +27,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeHolder>() {
         }
     }
 
-    val differCallback = object : DiffUtil.ItemCallback<Hour>() {
+    private val differCallback = object : DiffUtil.ItemCallback<Hour>() {
         override fun areItemsTheSame(
             oldItem: Hour,
             newItem: Hour

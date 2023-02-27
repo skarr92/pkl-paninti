@@ -8,28 +8,45 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.sekar.paninti.databinding.ItemWeatherWeekBinding
 import com.sekar.paninti.forecast.data.model.Forecastday
+import com.sekar.paninti.forecast.ui.main.viewmodel.MainViewModel
+import com.sekar.paninti.forecast.utils.UnitPreference
 import java.text.DateFormat
 import java.text.SimpleDateFormat
 
-class WeatherAdapter : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
+class WeatherAdapter( private val viewModel: MainViewModel) : RecyclerView.Adapter<WeatherAdapter.WeatherHolder>() {
 
-    class WeatherHolder(private val binding: ItemWeatherWeekBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(item: Forecastday) {
+    inner class WeatherHolder(private val binding: ItemWeatherWeekBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(item: Forecastday?) {
             binding.apply {
-                val condition = "${item.day.condition.text}"
-                val temp = "${item.day.avgtempC.toInt()}°"
-                val day = item.date
+
+                val day = item?.date
                 val df: DateFormat = SimpleDateFormat("yyyy-MM-dd")
                 val dateFormat: DateFormat = SimpleDateFormat("EEEE")
                 val newDay: String = dateFormat.format(df.parse(day))
-                val iconWeather = "https:${item.day.condition.icon}"
+                val condition = "${item?.day?.condition?.text}"
+                val iconWeather = "https:${item?.day?.condition?.icon}"
+
+                val unitPreference = viewModel.unitPreference.value
+                val temperature = when (unitPreference) {
+                    UnitPreference.CELSIUS -> item?.day?.avgtempC?.toInt()
+                    UnitPreference.FAHRENHEIT -> item?.day?.avgtempF?.toInt()
+                    UnitPreference.KELVIN -> item?.day?.avgtempC?.toInt()?.plus(273)
+                    else -> {item?.day?.avgtempC?.toInt()}
+                }
+                val temperatureText = when (unitPreference) {
+                    UnitPreference.CELSIUS -> "$temperature°C"
+                    UnitPreference.FAHRENHEIT -> "$temperature°F"
+                    UnitPreference.KELVIN -> "$temperature K"
+                    else -> {"$temperature°"}
+                }
+
                 tvDay.text = newDay
                 tvWeather.text = condition
-                tvCel.text = temp
+                tvCel.text = temperatureText
                 Glide.with(ivWeather.context)
                     .load(iconWeather)
                     .into(ivWeather)
-            }
+                }
         }
     }
 

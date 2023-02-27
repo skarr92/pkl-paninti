@@ -10,20 +10,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.32" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/secondGuideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.84" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvDay"
         android:layout_width="@dimen/day_width"
         android:layout_height="wrap_content"
-        android:text="Wednesday"
+        android:text="@string/monday"
         android:textAppearance="@style/TextAppearance.Weather.Body2"
         android:textColor="@color/white"
         android:textStyle="bold"

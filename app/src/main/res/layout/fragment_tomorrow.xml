@@ -51,7 +51,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgMenuVertical"
+                        android:id="@+id/imgMenuVertical2"
                         android:layout_width="@dimen/color_product_select_variant"
                         android:layout_height="@dimen/color_product_select_variant"
                         android:layout_marginTop="@dimen/screen_margin"
@@ -85,7 +85,7 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/shapeableImageView2"
-                        app:layout_constraintTop_toBottomOf="@id/imgMenuVertical" />
+                        app:layout_constraintTop_toBottomOf="@id/imgMenuVertical2" />
 
                     <com.airbnb.lottie.LottieAnimationView
                         android:id="@+id/animationWeather"
@@ -136,8 +136,7 @@
                         android:id="@+id/tvMinTemp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/semi_huge_margin"
-                        android:layout_marginStart="@dimen/small_margin"
+                        android:layout_marginTop="@dimen/custom_margin_20dp"
                         android:text="@string/per_17"
                         android:textAppearance="@style/TextAppearance.Weather.Title3"
                         android:textColor="@color/white"
